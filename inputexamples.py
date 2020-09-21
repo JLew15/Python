@@ -1,0 +1,9 @@
+question = "What is your name? "
+name = input(question)
+social = "What is your SSN? "
+SSN = input(social)
+mail = "What is your email? "
+email = input(mail)
+number = "What is your phone number? "
+phonenumber = input(number)
+print("Your name is "+name,"Your social security number is "+str(SSN),"Your email is "+email,"Your Phone Number is "+str(phonenumber),sep="\n")
