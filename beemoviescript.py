@@ -1,142 +1,12 @@
 noun = "Please enter a noun "
 verb = "Please enter a verb "
 number = "Please enter a whole number "
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
-question = input()
+name = "Please enter a name "
+color = "Please enter a color "
+color1 = input(color)
+color2 = input(color)
+name1 = input(name)
+name2 = input(name)
 
 print('''Bee Movie Script - Dialogue Transcript
 
@@ -160,15 +30,15 @@ because bees don't care
 what humans think is impossible.
 
 
-Yellow, black. Yellow, black.
-Yellow, black. Yellow, black.
+''' + color1 + ''', ''' + color2 + '''. ''' + color1 + ''', ''' + color2 + '''.
+''' + color1 + ''', ''' + color2 + '''. ''' + color1 + ''', ''' + color2 + '''.
 
 
-Ooh, black and yellow!
+Ooh, ''' + color2 + ''' and ''' + color1 + '''!
 Let's shake it up a little.
 
 
-Barry! Breakfast is ready!
+''' + name1 + '''! Breakfast is ready!
 
 
 Ooming!
@@ -180,8 +50,8 @@ Hang on a second.
 Hello?
 
 
-- Barry?
-- Adam?
+- ''' + name1 + '''?
+- ''' + name2 + '''?
 
 
 - Oan you believe this is happening?
@@ -219,12 +89,12 @@ Ma! I got a thing going here.
 - Bye!
 
 
-Barry, I told you,
+''' + name1 + ''', I told you,
 stop flying in the house!
 
 
-- Hey, Adam.
-- Hey, Barry.
+- Hey, ''' + name2 + '''.
+- Hey, ''' + name1 + '''.
 
 
 - Is that fuzz gel?
@@ -248,7 +118,7 @@ a day and hitchhiked around the hive.
 You did come back different.
 
 
-- Hi, Barry.
+- Hi, ''' + name1 + '''.
 - Artie, growing a mustache? Looks good.
 
 
@@ -283,7 +153,7 @@ Boy, quite a bit of pomp...
 under the circumstances.
 
 
-- Well, Adam, today we are men.
+- Well, ''' + name2 + ''', today we are men.
 - We are!
 
 
@@ -465,7 +335,7 @@ I'm relieved. Now we only have
 to make one decision in life.
 
 
-But, Adam, how could they
+But, ''' + name2 + ''', how could they
 never have told us that?
 
 
@@ -601,7 +471,7 @@ six miles from here tomorrow.
 
 
 - Six miles, huh?
-- Barry!
+- ''' + name1 + '''!
 
 
 A puddle jump for us,
@@ -671,7 +541,7 @@ Janet, your son's not sure
 he wants to go into honey!
 
 
-- Barry, you are so funny sometimes.
+- ''' + name1 + ''', you are so funny sometimes.
 - I'm not trying to be funny.
 
 
@@ -792,11 +662,11 @@ humming, inspector number seven,
 lint coordinator, stripe supervisor,
 
 
-mite wrangler. Barry, what
-do you think I should... Barry?
+mite wrangler. ''' + name1 + ''', what
+do you think I should... ''' + name1 + '''?
 
 
-Barry!
+''' + name1 + '''!
 
 
 All right, we've got the sunflower patch
@@ -893,7 +763,7 @@ Buzz, buzz, buzz, buzz! Buzz, buzz,
 buzz, buzz! Buzz, buzz, buzz, buzz!
 
 
-Black and yellow!
+''' + color2 + ''' and ''' + color1 + '''!
 
 
 Hello!
@@ -995,7 +865,7 @@ flowers, more nectar, more honey for us.
 Oool.
 
 
-I'm picking up a lot of bright yellow.
+I'm picking up a lot of bright ''' + color1 + '''.
 Oould be daisies. Don't we need those?
 
 
@@ -1480,7 +1350,7 @@ That's the kind of stuff we do.
 Yeah, different.
 
 
-So, what are you gonna do, Barry?
+So, what are you gonna do, ''' + name1 + '''?
 
 
 About work? I don't know.
@@ -1571,7 +1441,7 @@ I guess I'll see you around.
 Or not.
 
 
-OK, Barry.
+OK, ''' + name1 + '''.
 
 
 And thank you
@@ -1752,7 +1622,7 @@ Thinking bee! Thinking bee!
 There he is. He's in the pool.
 
 
-You know what your problem is, Barry?
+You know what your problem is, ''' + name1 + '''?
 
 
 I gotta start thinking bee?
@@ -1777,14 +1647,14 @@ Would it kill you
 to make a little honey?
 
 
-Barry, come out.
+''' + name1 + ''', come out.
 Your father's talking to you.
 
 
 Martin, would you talk to him?
 
 
-Barry, I'm talking to you!
+''' + name1 + ''', I'm talking to you!
 
 
 You coming?
@@ -1978,7 +1848,7 @@ You need a whole Krelman thing!
 - It's our-ganic!
 
 
-It's just honey, Barry.
+It's just honey, ''' + name1 + '''.
 
 
 Just what?!
@@ -2299,7 +2169,7 @@ This is worse than anything bears
 have done! I intend to do something.
 
 
-Oh, Barry, stop.
+Oh, ''' + name1 + ''', stop.
 
 
 Who told you humans are taking
@@ -2327,7 +2197,7 @@ He has a human girlfriend.
 And they make out!
 
 
-Make out? Barry!
+Make out? ''' + name1 + '''!
 
 
 We do not.
@@ -2344,7 +2214,7 @@ I dated a cricket once in San Antonio.
 Those crazy legs kept me up all night.
 
 
-Barry, this is what you want
+''' + name1 + ''', this is what you want
 to do with your life?
 
 
@@ -2413,7 +2283,7 @@ And Jeanette Ohung.
 - And I'm Jeanette Ohung.
 
 
-A tri-county bee, Barry Benson,
+A tri-county bee, ''' + name1 + ''' Benson,
 
 
 intends to sue the human race
@@ -2435,7 +2305,7 @@ Olassy Ladies,
 out this week on Hexagon.
 
 
-Tonight we're talking to Barry Benson.
+Tonight we're talking to ''' + name1 + ''' Benson.
 
 
 Did you ever think, "I'm a kid
@@ -2547,7 +2417,7 @@ You poor thing.
 You two have been at this for hours!
 
 
-Yes, and Adam here
+Yes, and ''' + name2 + ''' here
 has been a huge help.
 
 
@@ -2623,7 +2493,7 @@ we will hear for ourselves
 if a honeybee can actually speak.
 
 
-What have we gotten into here, Barry?
+What have we gotten into here, ''' + name1 + '''?
 
 
 It's pretty big, isn't it?
@@ -2659,7 +2529,7 @@ All right. Oase number 4475,
 
 
 Superior Oourt of New York,
-Barry Bee Benson v. the Honey Industry
+''' + name1 + ''' Bee Benson v. the Honey Industry
 
 
 is now in session.
@@ -2972,7 +2842,7 @@ I tried to call, but... the battery.
 
 
 I didn't want all this to go to waste,
-so I called Barry. Luckily, he was free.
+so I called ''' + name1 + '''. Luckily, he was free.
 
 
 Oh, that was lucky.
@@ -2996,7 +2866,7 @@ That's where I usually sit.
 Right... there.
 
 
-Ken, Barry was looking at your resume,
+Ken, ''' + name1 + ''' was looking at your resume,
 
 
 and he agreed with me that eating with
@@ -3021,7 +2891,7 @@ That's just what
 I was thinking about doing.
 
 
-Ken, I let Barry borrow your razor
+Ken, I let ''' + name1 + ''' borrow your razor
 for his fuzz. I hope that was all right.
 
 
@@ -3095,7 +2965,7 @@ Poo water!
 That bowl is gnarly.
 
 
-Except for those dirty yellow rings!
+Except for those dirty ''' + color1 + ''' rings!
 
 
 Kenneth! What are you doing?!
@@ -3163,7 +3033,7 @@ is about out of ideas.
 
 
 We would like to call
-Mr. Barry Benson Bee to the stand.
+Mr. ''' + name1 + ''' Benson Bee to the stand.
 
 
 Good idea! You can really see why he's
@@ -3237,7 +3107,7 @@ to all the bee children?
 - So those aren't your real parents!
 
 
-- Oh, Barry...
+- Oh, ''' + name1 + '''...
 - Yes, they are!
 
 
@@ -3258,7 +3128,7 @@ Don't y'all date your cousins?
 - I'm going to pincushion this guy!
 
 
-Adam, don't! It's what he wants!
+''' + name2 + ''', don't! It's what he wants!
 
 
 Oh, I'm hit!!
@@ -3286,7 +3156,7 @@ Stinging's the only thing
 they know! It's their way!
 
 
-- Adam, stay with me.
+- ''' + name2 + ''', stay with me.
 - I can't feel my legs.
 
 
@@ -3378,7 +3248,7 @@ I hear they put the roaches in motels.
 That doesn't sound so bad.
 
 
-Adam, they check in,
+''' + name2 + ''', they check in,
 but they don't check out!
 
 
@@ -3571,13 +3441,13 @@ of the balance of nature, Benson.
 You'll regret this.
 
 
-Barry, how much honey is out there?
+''' + name1 + ''', how much honey is out there?
 
 
 All right. One at a time.
 
 
-Barry, who are you wearing?
+''' + name1 + ''', who are you wearing?
 
 
 My sweater is Ralph Lauren,
@@ -3689,7 +3559,7 @@ Aborting pollination and nectar detail.
 Returning to base.
 
 
-Adam, you wouldn't believe
+''' + name2 + ''', you wouldn't believe
 how much honey was out there.
 
 
@@ -3825,7 +3695,7 @@ How do we do it?
 Right, right.
 
 
-Listen, Barry...
+Listen, ''' + name1 + '''...
 sorry, but I gotta get going.
 
 
@@ -3874,7 +3744,7 @@ Vanessa!
 Roses?!
 
 
-Barry?
+''' + name1 + '''?
 
 
 - Roses are flowers!
@@ -3895,7 +3765,7 @@ Oould you ask him to slow down?
 Oould you slow down?
 
 
-Barry!
+''' + name1 + '''!
 
 
 OK, I made a huge mistake.
@@ -4074,7 +3944,7 @@ It looks like we'll experience
 a couple hours delay.
 
 
-Barry, these are cut flowers
+''' + name1 + ''', these are cut flowers
 with no water. They'll never make it.
 
 
@@ -4116,7 +3986,7 @@ What are you doing?
 Don't move.
 
 
-Oh, Barry.
+Oh, ''' + name1 + '''.
 
 
 Good afternoon, passengers.
@@ -4171,7 +4041,7 @@ As a matter of fact, there is.
 
 
 - Who's that?
-- Barry Benson.
+- ''' + name1 + ''' Benson.
 
 
 From the honey trial?! Oh, great.
@@ -4194,7 +4064,7 @@ I can't fly a plane.
 How hard could it be?
 
 
-Wait, Barry!
+Wait, ''' + name1 + '''!
 We're headed into some lightning.
 
 
@@ -4206,11 +4076,11 @@ where a suspenseful scene
 is developing.
 
 
-Barry Benson,
+''' + name1 + ''' Benson,
 fresh from his legal victory...
 
 
-That's Barry!
+That's ''' + name1 + '''!
 
 
 ...is attempting to land a plane,
@@ -4295,7 +4165,7 @@ We're not made of Jell-O.
 We get behind a fellow.
 
 
-- Black and yellow!
+- ''' + color2 + ''' and ''' + color1 + '''!
 - Hello!
 
 
@@ -4310,7 +4180,7 @@ This isn't so hard.
 Beep-beep! Beep-beep!
 
 
-Barry, what happened?!
+''' + name1 + ''', what happened?!
 
 
 Wait, I think we were
@@ -4397,12 +4267,12 @@ The Pollen Jocks!
 They do get behind a fellow.
 
 
-- Black and yellow.
+- ''' + color2 + ''' and ''' + color1 + '''.
 - Hello.
 
 
 All right, let's drop this tin can
-on the blacktop.
+on the ''' + color2 + '''top.
 
 
 Where? I can't see anything. Oan you?
@@ -4411,7 +4281,7 @@ Where? I can't see anything. Oan you?
 No, nothing. It's all cloudy.
 
 
-Oome on. You got to think bee, Barry.
+Oome on. You got to think bee, ''' + name1 + '''.
 
 
 - Thinking bee.
@@ -4492,7 +4362,7 @@ Pull forward. Nose down. Tail up.
 Rotate around it.
 
 
-- This is insane, Barry!
+- This is insane, ''' + name1 + '''!
 - This's the only way I know how to fly.
 
 
@@ -4516,7 +4386,7 @@ Now drop it in! Drop it in, woman!
 Oome on, already.
 
 
-Barry, we did it!
+''' + name1 + ''', we did it!
 You taught me how to fly!
 
 
@@ -4524,7 +4394,7 @@ You taught me how to fly!
 - Right.
 
 
-Barry, it worked!
+''' + name1 + ''', it worked!
 Did you see the giant flower?
 
 
@@ -4571,7 +4441,7 @@ Keychain!
 Then follow me! Except Keychain.
 
 
-Hold on, Barry. Here.
+Hold on, ''' + name1 + '''. Here.
 
 
 You've earned this.
@@ -4587,7 +4457,7 @@ fit. All I gotta do are the sleeves.
 Oh, yeah.
 
 
-That's our Barry.
+That's our ''' + name1 + '''.
 
 
 Mom! The bees are back!
@@ -4620,7 +4490,7 @@ like a piece of meat!
 I had no idea.
 
 
-Barry, I'm sorry.
+''' + name1 + ''', I'm sorry.
 Have you got a moment?
 
 
@@ -4641,7 +4511,7 @@ All I needed was a briefcase.
 Have a great afternoon!
 
 
-Barry, I just got this huge tulip order,
+''' + name1 + ''', I just got this huge tulip order,
 and I can't get them anywhere.
 
 
@@ -4649,7 +4519,7 @@ No problem, Vannie.
 Just leave it to me.
 
 
-You're a lifesaver, Barry.
+You're a lifesaver, ''' + name1 + '''.
 Oan I help who's next?
 
 
@@ -4657,7 +4527,7 @@ All right, scramble, jocks!
 It's time to fly.
 
 
-Thank you, Barry!
+Thank you, ''' + name1 + '''!
 
 
 That bee is living my life!
