@@ -36,23 +36,24 @@ print("----------------------")
 spacerline = "----------------------"
 
 # print each of the three score lines in the pattern "name = score"
-print(name1 + " = " + str(score1))
-print(spacerline)
-print(name2  + " = "  + str(score2))
-print(spacerline)
-print(name3  + " = "  + str(score3))
-print(spacerline)
-print(name4  + " = "  + str(score4))
-print(spacerline)
-print(name5  + " = "  + str(score5))
-print(spacerline)
-print(name6  + " = "  + str(score6))
-print(spacerline)
-print(name7  + " = "  + str(score7))
-print(spacerline)
-print(name8  + " = "  + str(score8))
-print(spacerline)
-print(name9  + " = "  + str(score9))
-print(spacerline)
-print(name10  + " = "  + str(score10))
-print(spacerline)
+table = str.format('''{0:^12} = {11:4}
+{10}
+{1:^12} = {12:4}
+{10}
+{2:^12} = {13:4}
+{10}
+{3:^12} = {14:4}
+{10}
+{4:^12} = {15:4}
+{10}
+{5:^12} = {16:4}
+{10}
+{6:^12} = {17:4}
+{10}
+{7:^12} = {18:4}
+{10}
+{8:^12} = {19:4}
+{10}
+{9:^12} = {20:4}
+{10}''',name1,name2,name3,name4,name5,name6,name7,name8,name9,name10,spacerline,score1,score2,score3,score4,score5,score6,score7,score8,score9,score10)
+print(table)

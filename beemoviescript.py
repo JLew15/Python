@@ -3,19 +3,22 @@ verb = "Please enter a verb "
 number = "Please enter a whole number "
 name = "Please enter a name "
 color = "Please enter a color "
+animal = "Please enter an animal/insect "
 color1 = input(color)
 color2 = input(color)
 name1 = input(name)
 name2 = input(name)
+insect1 = input(animal)
+animal1 = input(animal)
 
-print('''Bee Movie Script - Dialogue Transcript
+print('''''' + insect1 + ''' Movie Script - Dialogue Transcript
 
 
 According to all known laws
 of aviation,
 
 
-there is no way a bee
+there is no way a ''' + insect1 + '''
 should be able to fly.
 
 
@@ -23,11 +26,11 @@ Its wings are too small to get
 its fat little body off the ground.
 
 
-The bee, of course, flies anyway
+The ''' + insect1 + ''', of course, flies anyway
 
 
-because bees don't care
-what humans think is impossible.
+because ''' + insect1 + '''s don't care
+what ''' + animal1 + '''s think is impossible.
 
 
 ''' + color1 + ''', ''' + color2 + '''. ''' + color1 + ''', ''' + color2 + '''.
@@ -157,14 +160,14 @@ under the circumstances.
 - We are!
 
 
-- Bee-men.
+- ''' + insect1 + '''-men.
 - Amen!
 
 
 Hallelujah!
 
 
-Students, faculty, distinguished bees,
+Students, faculty, distinguished ''' + insect1 + '''s,
 
 
 please welcome Dean Buzzwell.
@@ -217,7 +220,7 @@ Wow.
 Wow.
 
 
-We know that you, as a bee,
+We know that you, as a ''' + insect1 + ''',
 have worked your whole life
 
 
@@ -259,10 +262,10 @@ Honey!
 
 
 to improve every aspect
-of bee existence.
+of ''' + insect1 + ''' existence.
 
 
-These bees are stress-testing
+These ''' + insect1 + '''s are stress-testing
 a new helmet technology.
 
 
@@ -285,8 +288,8 @@ Saves us millions.
 Can anyone work on the Krelman?
 
 
-Of course. Most bee jobs are
-small ones. But bees know
+Of course. Most ''' + insect1 + ''' jobs are
+small ones. But ''' + insect1 + '''s know
 
 
 that every small job,
@@ -307,7 +310,7 @@ I didn't know that.
 What's the difference?
 
 
-You'll be happy to know that bees,
+You'll be happy to know that ''' + insect1 + '''s,
 as a species, haven't had one day off
 
 
@@ -340,7 +343,7 @@ never have told us that?
 
 
 Why would you question anything?
-We're bees.
+We're ''' + insect1 + '''s.
 
 
 We're the most perfectly
@@ -413,7 +416,7 @@ than you and I will see in a lifetime.
 
 
 It's just a status symbol.
-Bees make too much of it.
+''' + insect1 + '''s make too much of it.
 
 
 Perhaps. Unless you're wearing it
@@ -486,7 +489,7 @@ We're going 0900 at J-Gate.
 
 
 What do you think, buzzy-boy?
-Are you bee enough?
+Are you ''' + insect1 + ''' enough?
 
 
 I might be. It all depends
@@ -585,7 +588,7 @@ will be gone.
 Yeah, right.
 
 
-Pollen counting, stunt bee, pouring,
+Pollen counting, stunt ''' + insect1 + ''', pouring,
 stirrer, front desk, hair removal...
 
 
@@ -640,7 +643,7 @@ The Krelman opened up again.
 What happened?
 
 
-A bee died. Makes an opening. See?
+A ''' + insect1 + ''' died. Makes an opening. See?
 He's dead. Another dead one.
 
 
@@ -655,7 +658,7 @@ Oh, this is so hard!
 
 
 Heating, cooling,
-stunt bee, pourer, stirrer,
+stunt ''' + insect1 + ''', pourer, stirrer,
 
 
 humming, inspector number seven,
@@ -729,7 +732,7 @@ You got a rain advisory today,
 
 
 and as you all know,
-bees cannot fly in rain.
+''' + insect1 + '''s cannot fly in rain.
 
 
 So be careful. As always,
@@ -741,7 +744,7 @@ birds, bears and bats.
 
 
 Also, I got a couple of reports
-of root beer being poured on us.
+of root ''' + insect1 + '''r being poured on us.
 
 
 Murphy's in a home because of it,
@@ -752,8 +755,8 @@ babbling like a cicada!
 - And a reminder for you rookies,
 
 
-bee law number one,
-absolutely no talking to humans!
+''' + insect1 + ''' law number one,
+absolutely no talking to ''' + animal1 + '''s!
 
 
 All right, launch positions!
@@ -905,7 +908,7 @@ Chemical-y.
 Careful, guys. It's a little grabby.
 
 
-My sweet lord of bees!
+My sweet lord of ''' + insect1 + '''s!
 
 
 Candy-brain, get off there!
@@ -962,14 +965,14 @@ Yowser!
 Gross.
 
 
-There's a bee in the car!
+There's a ''' + insect1 + ''' in the car!
 
 
 - Do something!
 - I'm driving!
 
 
-- Hi, bee.
+- Hi, ''' + insect1 + '''.
 - He's back here!
 
 
@@ -1005,7 +1008,7 @@ Can't fly in rain.
 Can't fly in rain.
 
 
-Mayday! Mayday! Bee going down!
+Mayday! Mayday! ''' + insect1 + ''' going down!
 
 
 Ken, could you close
@@ -1023,7 +1026,7 @@ I made it into a fold-out brochure.
 You see? Folds out.
 
 
-Oh, no. More humans. I don't need this.
+Oh, no. More ''' + animal1 + '''s. I don't need this.
 
 
 What was that?
@@ -1074,7 +1077,7 @@ I could feel it getting hotter.
 At first I thought it was just me.
 
 
-Wait! Stop! Bee!
+Wait! Stop! ''' + insect1 + '''!
 
 
 Stand back. These are winter boots.
@@ -1159,8 +1162,8 @@ What would I say?
 I could really get in trouble.
 
 
-It's a bee law.
-You're not supposed to talk to a human.
+It's a ''' + insect1 + ''' law.
+You're not supposed to talk to a ''' + animal1 + '''.
 
 
 I can't believe I'm doing this.
@@ -1213,7 +1216,7 @@ is very disconcerting.
 
 
 This is a bit of a surprise to me.
-I mean, you're a bee!
+I mean, you're a ''' + insect1 + '''!
 
 
 I am. And I'm not supposed
@@ -1233,12 +1236,12 @@ It's just how I was raised.
 That was a little weird.
 
 
-- I'm talking with a bee.
+- I'm talking with a ''' + insect1 + '''.
 - Yeah.
 
 
-I'm talking to a bee.
-And the bee is talking to me!
+I'm talking to a ''' + insect1 + '''.
+And the ''' + insect1 + ''' is talking to me!
 
 
 I just want to say I'm grateful.
@@ -1260,7 +1263,7 @@ Same way you did, I guess.
 - Yeah.
 
 
-Bees are funny. If we didn't laugh,
+''' + insect1 + '''s are funny. If we didn't laugh,
 we'd cry with what we have to deal with.
 
 
@@ -1341,7 +1344,7 @@ I thought you said Guatemalan.
 Why would I marry a watermelon?"
 
 
-Is that a bee joke?
+Is that a ''' + insect1 + ''' joke?
 
 
 That's the kind of stuff we do.
@@ -1410,7 +1413,7 @@ I lost a toe ring there once.
 Just having two cups of coffee!
 
 
-Anyway, this has been great.
+Anyway, this has ''' + insect1 + '''n great.
 Thanks for the coffee.
 
 
@@ -1472,11 +1475,11 @@ It was the scariest,
 happiest moment of my life.
 
 
-Humans! I can't believe
-you were with humans!
+''' + animal1 + '''s! I can't believe
+you were with ''' + animal1 + '''s!
 
 
-Giant, scary humans!
+Giant, scary ''' + animal1 + '''s!
 What were they like?
 
 
@@ -1510,7 +1513,7 @@ can pick out yourjob and be normal.
 Well, I met someone.
 
 
-You did? Was she Bee-ish?
+You did? Was she ''' + insect1 + '''-ish?
 
 
 - A wasp?! Your parents will kill you!
@@ -1531,11 +1534,11 @@ I can't get by that face.
 So who is she?
 
 
-She's... human.
+She's... ''' + animal1 + '''.
 
 
-No, no. That's a bee law.
-You wouldn't break a bee law.
+No, no. That's a ''' + insect1 + ''' law.
+You wouldn't break a ''' + insect1 + ''' law.
 
 
 - Her name's Vanessa.
@@ -1545,14 +1548,14 @@ You wouldn't break a bee law.
 She's so nice. And she's a florist!
 
 
-Oh, no! You're dating a human florist!
+Oh, no! You're dating a ''' + animal1 + ''' florist!
 
 
 We're not dating.
 
 
 You're flying outside the hive, talking
-to humans that attack our homes
+to ''' + animal1 + '''s that attack our homes
 
 
 with power washers and M-80s!
@@ -1607,16 +1610,16 @@ There's no yearning.
 Stop yearning. Listen to me!
 
 
-You have got to start thinking bee,
-my friend. Thinking bee!
+You have got to start thinking ''' + insect1 + ''',
+my friend. Thinking ''' + insect1 + '''!
 
 
-- Thinking bee.
-- Thinking bee.
+- Thinking ''' + insect1 + '''.
+- Thinking ''' + insect1 + '''.
 
 
-Thinking bee! Thinking bee!
-Thinking bee! Thinking bee!
+Thinking ''' + insect1 + '''! Thinking ''' + insect1 + '''!
+Thinking ''' + insect1 + '''! Thinking ''' + insect1 + '''!
 
 
 There he is. He's in the pool.
@@ -1625,13 +1628,13 @@ There he is. He's in the pool.
 You know what your problem is, ''' + name1 + '''?
 
 
-I gotta start thinking bee?
+I gotta start thinking ''' + insect1 + '''?
 
 
 How much longer will this go on?
 
 
-It's been three days!
+It's ''' + insect1 + '''n three days!
 Why aren't you working?
 
 
@@ -1640,7 +1643,7 @@ to think about.
 
 
 What life? You have no life!
-You have no job. You're barely a bee!
+You have no job. You're barely a ''' + insect1 + '''!
 
 
 Would it kill you
@@ -1705,7 +1708,7 @@ A girl? Is this why you can't decide?
 Bye.
 
 
-I just hope she's Bee-ish.
+I just hope she's ''' + insect1 + '''-ish.
 
 
 They have a huge parade
@@ -1750,7 +1753,7 @@ It's a horrible, horrible disease.
 Oh, my.
 
 
-Dumb bees!
+Dumb ''' + insect1 + '''s!
 
 
 You must want to sting all those jerks.
@@ -1811,7 +1814,7 @@ of Mighty Hercules is this?
 
 
 How did this get here?
-Cute Bee, Golden Blossom,
+Cute ''' + insect1 + ''', Golden Blossom,
 
 
 Ray Liotta Private Select?
@@ -1833,7 +1836,7 @@ enough food of your own?
 - How do you get it?
 
 
-- Bees make it.
+- ''' + insect1 + '''s make it.
 - I know who makes it!
 
 
@@ -1854,7 +1857,7 @@ It's just honey, ''' + name1 + '''.
 Just what?!
 
 
-Bees don't know about this!
+''' + insect1 + '''s don't know about this!
 This is stealing! A lot of stealing!
 
 
@@ -1907,7 +1910,7 @@ I thought we were friends.
 
 
 The last thing we want
-to do is upset bees!
+to do is upset ''' + insect1 + '''s!
 
 
 You're too late! It's ours now!
@@ -1982,7 +1985,7 @@ Uh-oh!
 - Triple blade?
 
 
-Jump on! It's your only chance, bee!
+Jump on! It's your only chance, ''' + insect1 + '''!
 
 
 Why does everything have
@@ -2003,7 +2006,7 @@ I'm Carl Kasell.
 But don't kill no more bugs!
 
 
-- Bee!
+- ''' + insect1 + '''!
 - Moose blood guy!!
 
 
@@ -2017,7 +2020,7 @@ Like tiny screaming.
 Turn off the radio.
 
 
-Whassup, bee boy?
+Whassup, ''' + insect1 + ''' boy?
 
 
 Hey, Blood.
@@ -2037,7 +2040,7 @@ is where they're getting it.
 I mean, that honey's ours.
 
 
-- Bees hang tight.
+- ''' + insect1 + '''s hang tight.
 - We're all jammed in.
 
 
@@ -2071,7 +2074,7 @@ You got to be kidding me!
 
 
 Mooseblood's about to leave
-the building! So long, bee!
+the building! So long, ''' + insect1 + '''!
 
 
 - Hey, guys!
@@ -2089,7 +2092,7 @@ and it's pretty much pure profit.
 What is this place?
 
 
-A bee's got a brain
+A ''' + insect1 + ''''s got a brain
 the size of a pinhead.
 
 
@@ -2158,7 +2161,7 @@ Oh, no!
 There's hundreds of them!
 
 
-Bee honey.
+''' + insect1 + ''' honey.
 
 
 Our honey is being brazenly stolen
@@ -2172,7 +2175,7 @@ have done! I intend to do something.
 Oh, ''' + name1 + ''', stop.
 
 
-Who told you humans are taking
+Who told you ''' + animal1 + '''s are taking
 our honey? That's a rumor.
 
 
@@ -2186,14 +2189,14 @@ These are obviously doctored photos.
 How did you get mixed up in this?
 
 
-He's been talking to humans.
+He's ''' + insect1 + '''n talking to ''' + animal1 + '''s.
 
 
 - What?
-- Talking to humans?!
+- Talking to ''' + animal1 + '''s?!
 
 
-He has a human girlfriend.
+He has a ''' + animal1 + ''' girlfriend.
 And they make out!
 
 
@@ -2207,7 +2210,7 @@ We do not.
 - Whose side are you on?
 
 
-The bees!
+The ''' + insect1 + '''s!
 
 
 I dated a cricket once in San Antonio.
@@ -2219,7 +2222,7 @@ to do with your life?
 
 
 I want to do it for all our lives.
-Nobody works harder than bees!
+Nobody works harder than ''' + insect1 + '''s!
 
 
 Dad, I remember you
@@ -2240,7 +2243,7 @@ We live on two cups a year. They put it
 in lip balm for no reason whatsoever!
 
 
-Even if it's true, what can one bee do?
+Even if it's true, what can one ''' + insect1 + ''' do?
 
 
 Sting them where it really hurts.
@@ -2257,14 +2260,14 @@ Up the nose? That's a killer.
 
 
 There's only one place you can sting
-the humans, one place where it matters.
+the ''' + animal1 + '''s, one place where it matters.
 
 
 Hive at Five, the hive's only
 full-hour action news source.
 
 
-No more bee beards!
+No more ''' + insect1 + ''' beards!
 
 
 With Bob Bumble at the anchor desk.
@@ -2283,10 +2286,10 @@ And Jeanette Chung.
 - And I'm Jeanette Chung.
 
 
-A tri-county bee, ''' + name1 + ''' Benson,
+A tri-county ''' + insect1 + ''', ''' + name1 + ''' Benson,
 
 
-intends to sue the human race
+intends to sue the ''' + animal1 + ''' race
 for stealing our honey,
 
 
@@ -2294,7 +2297,7 @@ packaging it and profiting
 from it illegally!
 
 
-Tomorrow night on Bee Larry King,
+Tomorrow night on ''' + insect1 + ''' Larry King,
 
 
 we'll have three former queens here in
@@ -2312,15 +2315,15 @@ Did you ever think, "I'm a kid
 from the hive. I can't do this"?
 
 
-Bees have never been afraid
+''' + insect1 + '''s have never ''' + insect1 + '''n afraid
 to change the world.
 
 
-What about Bee Columbus?
-Bee Gandhi? Bejesus?
+What about ''' + insect1 + ''' Columbus?
+''' + insect1 + ''' Gandhi? Bejesus?
 
 
-Where I'm from, we'd never sue humans.
+Where I'm from, we'd never sue ''' + animal1 + '''s.
 
 
 We were thinking
@@ -2330,16 +2333,16 @@ of stickball or candy stores.
 How old are you?
 
 
-The bee community
+The ''' + insect1 + ''' community
 is supporting you in this case,
 
 
 which will be the trial
-of the bee century.
+of the ''' + insect1 + ''' century.
 
 
 You know, they have a Larry King
-in the human world too.
+in the ''' + animal1 + ''' world too.
 
 
 It's a common name. Next week...
@@ -2379,15 +2382,15 @@ Quiet, please.
 Actual work going on here.
 
 
-- Is that that same bee?
+- Is that that same ''' + insect1 + '''?
 - Yes, it is!
 
 
-I'm helping him sue the human race.
+I'm helping him sue the ''' + animal1 + ''' race.
 
 
 - Hello.
-- Hello, bee.
+- Hello, ''' + insect1 + '''.
 
 
 This is Ken.
@@ -2414,11 +2417,11 @@ Why is yogurt night so difficult?!
 
 
 You poor thing.
-You two have been at this for hours!
+You two have ''' + insect1 + '''n at this for hours!
 
 
 Yes, and ''' + name2 + ''' here
-has been a huge help.
+has ''' + insect1 + '''n a huge help.
 
 
 - Frosting...
@@ -2432,7 +2435,7 @@ to use the competition.
 So why are you helping me?
 
 
-Bees have good qualities.
+''' + insect1 + '''s have good qualities.
 
 
 And it takes my mind off the shop.
@@ -2455,7 +2458,7 @@ And artificial flowers.
 Bent stingers, pointless pollination.
 
 
-Bees must hate those fake things!
+''' + insect1 + '''s must hate those fake things!
 
 
 Nothing worse
@@ -2474,7 +2477,7 @@ You sure you want to go through with it?
 
 
 Am I sure? When I'm done with
-the humans, they won't be able
+the ''' + animal1 + '''s, they won't be able
 
 
 to say, "Honey, I'm home,"
@@ -2490,7 +2493,7 @@ because for the first time in history,
 
 
 we will hear for ourselves
-if a honeybee can actually speak.
+if a honey''' + insect1 + ''' can actually speak.
 
 
 What have we gotten into here, ''' + name1 + '''?
@@ -2499,7 +2502,7 @@ What have we gotten into here, ''' + name1 + '''?
 It's pretty big, isn't it?
 
 
-I can't believe how many humans
+I can't believe how many ''' + animal1 + '''s
 don't work during the day.
 
 
@@ -2515,7 +2518,7 @@ behind the barricade.
 - I don't know, I just got a chill.
 
 
-Well, if it isn't the bee team.
+Well, if it isn't the ''' + insect1 + ''' team.
 
 
 You boys work on this?
@@ -2529,7 +2532,7 @@ All right. Case number 4475,
 
 
 Superior Court of New York,
-''' + name1 + ''' Bee Benson v. the Honey Industry
+''' + name1 + ''' ''' + insect1 + ''' Benson v. the Honey Industry
 
 
 is now in session.
@@ -2543,7 +2546,7 @@ A privilege.
 
 
 Mr. Benson... you're representing
-all the bees of the world?
+all the ''' + insect1 + '''s of the world?
 
 
 I'm kidding. Yes, Your Honor,
@@ -2582,7 +2585,7 @@ with the silkworm
 for the elastic in my britches!
 
 
-Talking bee!
+Talking ''' + insect1 + '''!
 
 
 How do we know this isn't some sort of
@@ -2609,11 +2612,11 @@ Ladies and gentlemen,
 there's no trickery here.
 
 
-I'm just an ordinary bee.
+I'm just an ordinary ''' + insect1 + '''.
 Honey's pretty important to me.
 
 
-It's important to all bees.
+It's important to all ''' + insect1 + '''s.
 We invented it!
 
 
@@ -2657,16 +2660,16 @@ I see you also own
 Honeyburton and Honron!
 
 
-Yes, they provide beekeepers
+Yes, they provide ''' + insect1 + '''keepers
 for our farms.
 
 
-Beekeeper. I find that
+''' + insect1 + '''keeper. I find that
 to be a very disturbing term.
 
 
 I don't imagine you employ
-any bee-free-ers, do you?
+any ''' + insect1 + '''-free-ers, do you?
 
 
 - No.
@@ -2677,8 +2680,8 @@ any bee-free-ers, do you?
 - No.
 
 
-Because you don't free bees.
-You keep bees. Not only that,
+Because you don't free ''' + insect1 + '''s.
+You keep ''' + insect1 + '''s. Not only that,
 
 
 it seems you thought a bear would be
@@ -2694,7 +2697,7 @@ Yogi Bear, Fozzie Bear, Build-A-Bear.
 You mean like this?
 
 
-Bears kill bees!
+Bears kill ''' + insect1 + '''s!
 
 
 How'd you like his head crashing
@@ -2716,7 +2719,7 @@ Your name intrigues me.
 - I was with a band called The Police.
 
 
-But you've never been
+But you've never ''' + insect1 + '''n
 a police officer, have you?
 
 
@@ -2727,8 +2730,8 @@ No, you haven't. And so here
 we have yet another example
 
 
-of bee culture casually
-stolen by a human
+of ''' + insect1 + ''' culture casually
+stolen by a ''' + animal1 + '''
 
 
 for nothing more than
@@ -2738,7 +2741,7 @@ a prance-about stage name.
 Oh, please.
 
 
-Have you ever been stung, Mr. Sting?
+Have you ever ''' + insect1 + '''n stung, Mr. Sting?
 
 
 Because I'm feeling
@@ -2777,7 +2780,7 @@ Not yet it isn't. But is this
 what it's come to for you?
 
 
-Exploiting tiny, helpless bees
+Exploiting tiny, helpless ''' + insect1 + '''s
 so you don't
 
 
@@ -2883,7 +2886,7 @@ the rightjob. We have that in common.
 Do we?
 
 
-Bees have 100 percent employment,
+''' + insect1 + '''s have 100 percent employment,
 but we do jobs like taking the crud out.
 
 
@@ -2978,11 +2981,11 @@ I don't eat it!
 We need to talk!
 
 
-He's just a little bee!
+He's just a little ''' + insect1 + '''!
 
 
 And he happens to be
-the nicest bee I've met in a long time!
+the nicest ''' + insect1 + ''' I've met in a long time!
 
 
 Long time? What are you talking about?!
@@ -2993,7 +2996,7 @@ No, but there are other things bugging
 me in life. And you're one of them!
 
 
-Fine! Talking bees, no yogurt night...
+Fine! Talking ''' + insect1 + '''s, no yogurt night...
 
 
 My nerves are fried from riding
@@ -3033,7 +3036,7 @@ is about out of ideas.
 
 
 We would like to call
-Mr. ''' + name1 + ''' Benson Bee to the stand.
+Mr. ''' + name1 + ''' Benson ''' + insect1 + ''' to the stand.
 
 
 Good idea! You can really see why he's
@@ -3056,7 +3059,7 @@ to do to turn this jury around
 
 
 is to remind them
-of what they don't like about bees.
+of what they don't like about ''' + insect1 + '''s.
 
 
 - You got the tweezers?
@@ -3066,7 +3069,7 @@ of what they don't like about bees.
 Only to losing, son. Only to losing.
 
 
-Mr. Benson Bee, I'll ask you
+Mr. Benson ''' + insect1 + ''', I'll ask you
 what I think we'd all like to know.
 
 
@@ -3095,12 +3098,12 @@ Are you her little...
 ...bedbug?
 
 
-I've seen a bee documentary or two.
+I've seen a ''' + insect1 + ''' documentary or two.
 From what I understand,
 
 
 doesn't your queen give birth
-to all the bee children?
+to all the ''' + insect1 + ''' children?
 
 
 - Yeah, but...
@@ -3114,11 +3117,11 @@ to all the bee children?
 Hold me back!
 
 
-You're an illegitimate bee,
+You're an illegitimate ''' + insect1 + ''',
 aren't you, Benson?
 
 
-He's denouncing bees!
+He's denouncing ''' + insect1 + '''s!
 
 
 Don't y'all date your cousins?
@@ -3144,7 +3147,7 @@ The venom! The venom
 is coursing through my veins!
 
 
-I have been felled
+I have ''' + insect1 + '''n felled
 by a winged beast of destruction!
 
 
@@ -3173,11 +3176,11 @@ I will have order in this court. Order!
 Order, please!
 
 
-The case of the honeybees
-versus the human race
+The case of the honey''' + insect1 + '''s
+versus the ''' + animal1 + ''' race
 
 
-took a pointed turn against the bees
+took a pointed turn against the ''' + insect1 + '''s
 
 
 yesterday when one of their legal
@@ -3237,7 +3240,7 @@ What were we thinking? Look at us. We're
 just a couple of bugs in this world.
 
 
-What will the humans do to us
+What will the ''' + animal1 + '''s do to us
 if they win?
 
 
@@ -3263,14 +3266,14 @@ to close that window?
 - The smoke.
 
 
-Bees don't smoke.
+''' + insect1 + '''s don't smoke.
 
 
-Right. Bees don't smoke.
+Right. ''' + insect1 + '''s don't smoke.
 
 
-Bees don't smoke!
-But some bees are smoking.
+''' + insect1 + '''s don't smoke!
+But some ''' + insect1 + '''s are smoking.
 
 
 That's it! That's our case!
@@ -3301,7 +3304,7 @@ Where is the rest of your team?
 Well, Your Honor, it's interesting.
 
 
-Bees are trained to fly haphazardly,
+''' + insect1 + '''s are trained to fly haphazardly,
 
 
 and as a result,
@@ -3362,7 +3365,7 @@ Here is your smoking gun.
 What is that?
 
 
-It's a bee smoker!
+It's a ''' + insect1 + ''' smoker!
 
 
 What, this?
@@ -3370,13 +3373,13 @@ This harmless little contraption?
 
 
 This couldn't hurt a fly,
-let alone a bee.
+let alone a ''' + insect1 + '''.
 
 
 Look at what has happened
 
 
-to bees who have never been asked,
+to ''' + insect1 + '''s who have never ''' + insect1 + '''n asked,
 "Smoking or non?"
 
 
@@ -3399,19 +3402,19 @@ to the white man?
 
 
 Ladies and gentlemen, please,
-free these bees!
+free these ''' + insect1 + '''s!
 
 
-Free the bees! Free the bees!
+Free the ''' + insect1 + '''s! Free the ''' + insect1 + '''s!
 
 
-Free the bees!
+Free the ''' + insect1 + '''s!
 
 
-Free the bees! Free the bees!
+Free the ''' + insect1 + '''s! Free the ''' + insect1 + '''s!
 
 
-The court finds in favor of the bees!
+The court finds in favor of the ''' + insect1 + '''s!
 
 
 Vanessa, we won!
@@ -3427,7 +3430,7 @@ I'm OK! You know what this means?
 
 
 All the honey
-will finally belong to the bees.
+will finally belong to the ''' + insect1 + '''s.
 
 
 Now we won't have
@@ -3458,7 +3461,7 @@ and I have no pants.
 - What do you mean?
 
 
-We've been living the bee way
+We've ''' + insect1 + '''n living the ''' + insect1 + ''' way
 a long time, 27 million years.
 
 
@@ -3467,7 +3470,7 @@ What will you demand as a settlement?
 
 
 First, we'll demand a complete shutdown
-of all bee work camps.
+of all ''' + insect1 + ''' work camps.
 
 
 Then we want back the honey
@@ -3500,7 +3503,7 @@ for a few hours, then he'll be fine.
 
 
 And we will no longer tolerate
-bee-negative nicknames...
+''' + insect1 + '''-negative nicknames...
 
 
 But it's just a prance-about stage name!
@@ -3510,7 +3513,7 @@ But it's just a prance-about stage name!
 in bogus health products
 
 
-and la-dee-da human
+and la-dee-da ''' + animal1 + '''
 tea-time snack garnishments.
 
 
@@ -3584,7 +3587,7 @@ to San Antonio with a cricket.
 At least we got our honey back.
 
 
-Sometimes I think, so what if humans
+Sometimes I think, so what if ''' + animal1 + '''s
 liked our honey? Who wouldn't?
 
 
@@ -3642,21 +3645,21 @@ No.
 And whose fault do you think that is?
 
 
-You know, I'm gonna guess bees.
+You know, I'm gonna guess ''' + insect1 + '''s.
 
 
-Bees?
+''' + insect1 + '''s?
 
 
 Specifically, me.
 
 
-I didn't think bees not needing to make
+I didn't think ''' + insect1 + '''s not needing to make
 honey would affect all these things.
 
 
 It's notjust flowers.
-Fruits, vegetables, they all need bees.
+Fruits, vegetables, they all need ''' + insect1 + '''s.
 
 
 That's our whole SAT test right there.
@@ -3669,7 +3672,7 @@ the entire animal kingdom.
 And then, of course...
 
 
-The human species?
+The ''' + animal1 + ''' species?
 
 
 So if there's no more pollination,
@@ -3751,7 +3754,7 @@ Roses?!
 - Yes, they are.
 
 
-Flowers, bees, pollen!
+Flowers, ''' + insect1 + '''s, pollen!
 
 
 I know.
@@ -3800,7 +3803,7 @@ All right, they have the roses,
 the roses have the pollen.
 
 
-I know every bee, plant
+I know every ''' + insect1 + ''', plant
 and flower bud in this park.
 
 
@@ -3808,7 +3811,7 @@ All we gotta do is get what they've got
 back here with what we've got.
 
 
-- Bees.
+- ''' + insect1 + '''s.
 - Park.
 
 
@@ -3903,7 +3906,7 @@ Stop! Security.
 - Yes.
 
 
-Has it been
+Has it ''' + insect1 + '''n
 in your possession the entire time?
 
 
@@ -3970,7 +3973,7 @@ Captain, I'm in a real situation.
 - Nothing.
 
 
-Bee!
+''' + insect1 + '''!
 
 
 Don't freak out! My entire species...
@@ -4011,7 +4014,7 @@ One's bald, one's in a boat,
 they're both unconscious!
 
 
-- Is that another bee joke?
+- Is that another ''' + insect1 + ''' joke?
 - No!
 
 
@@ -4048,7 +4051,7 @@ From the honey trial?! Oh, great.
 
 
 Vanessa, this is nothing more
-than a big metal bee.
+than a big metal ''' + insect1 + '''.
 
 
 It's got giant wings, huge engines.
@@ -4101,7 +4104,7 @@ with absolutely no flight experience.
 
 
 Just a minute.
-There's a bee on that plane.
+There's a ''' + insect1 + ''' on that plane.
 
 
 I'm quite familiar with Mr. Benson
@@ -4114,7 +4117,7 @@ They've done enough damage.
 But isn't he your only hope?
 
 
-Technically, a bee
+Technically, a ''' + insect1 + '''
 shouldn't be able to fly at all.
 
 
@@ -4139,7 +4142,7 @@ and body mass make no sense."
 The way we work may be a mystery to you.
 
 
-Making honey takes a lot of bees
+Making honey takes a lot of ''' + insect1 + '''s
 doing a lot of small jobs.
 
 
@@ -4154,11 +4157,11 @@ More than we realized.
 To us, to everyone.
 
 
-That's why I want to get bees
+That's why I want to get ''' + insect1 + '''s
 back to working together.
 
 
-That's the bee way!
+That's the ''' + insect1 + ''' way!
 We're not made of Jell-O.
 
 
@@ -4177,7 +4180,7 @@ Left, right, down, hover.
 
 
 This isn't so hard.
-Beep-beep! Beep-beep!
+''' + insect1 + '''p-''' + insect1 + '''p! ''' + insect1 + '''p-''' + insect1 + '''p!
 
 
 ''' + name1 + ''', what happened?!
@@ -4187,7 +4190,7 @@ Wait, I think we were
 on autopilot the whole time.
 
 
-- That may have been helping me.
+- That may have ''' + insect1 + '''n helping me.
 - And now we're not!
 
 
@@ -4281,15 +4284,15 @@ Where? I can't see anything. Can you?
 No, nothing. It's all cloudy.
 
 
-Come on. You got to think bee, ''' + name1 + '''.
+Come on. You got to think ''' + insect1 + ''', ''' + name1 + '''.
 
 
-- Thinking bee.
-- Thinking bee.
+- Thinking ''' + insect1 + '''.
+- Thinking ''' + insect1 + '''.
 
 
-Thinking bee!
-Thinking bee! Thinking bee!
+Thinking ''' + insect1 + '''!
+Thinking ''' + insect1 + '''! Thinking ''' + insect1 + '''!
 
 
 Wait a minute.
@@ -4306,16 +4309,16 @@ Like a 27-million-year-old instinct.
 Bring the nose down.
 
 
-Thinking bee!
-Thinking bee! Thinking bee!
+Thinking ''' + insect1 + '''!
+Thinking ''' + insect1 + '''! Thinking ''' + insect1 + '''!
 
 
 - What in the world is on the tarmac?
 - Get some lights on that!
 
 
-Thinking bee!
-Thinking bee! Thinking bee!
+Thinking ''' + insect1 + '''!
+Thinking ''' + insect1 + '''! Thinking ''' + insect1 + '''!
 
 
 - Vanessa, aim for the flower.
@@ -4323,7 +4326,7 @@ Thinking bee! Thinking bee!
 
 
 Cut the engines. We're going in
-on bee power. Ready, boys?
+on ''' + insect1 + ''' power. Ready, boys?
 
 
 Affirmative!
@@ -4353,7 +4356,7 @@ That's a fat guy in a flowered shirt.
 I mean the giant pulsating flower
 
 
-made of millions of bees!
+made of millions of ''' + insect1 + '''s!
 
 
 Pull forward. Nose down. Tail up.
@@ -4428,11 +4431,11 @@ If we're gonna survive as a species,
 this is our moment! What do you say?
 
 
-Are we going to be bees, orjust
+Are we going to be ''' + insect1 + '''s, orjust
 Museum of Natural History keychains?
 
 
-We're bees!
+We're ''' + insect1 + '''s!
 
 
 Keychain!
@@ -4460,7 +4463,7 @@ Oh, yeah.
 That's our ''' + name1 + '''.
 
 
-Mom! The bees are back!
+Mom! The ''' + insect1 + '''s are back!
 
 
 If anybody needs
@@ -4476,7 +4479,7 @@ afternoon! Can I help who's next?
 
 
 Would you like some honey with that?
-It is bee-approved. Don't forget these.
+It is ''' + insect1 + '''-approved. Don't forget these.
 
 
 Milk, cream, cheese, it's all me.
@@ -4530,7 +4533,7 @@ It's time to fly.
 Thank you, ''' + name1 + '''!
 
 
-That bee is living my life!
+That ''' + insect1 + ''' is living my life!
 
 
 Let it go, Kenny.
@@ -4549,10 +4552,10 @@ I was dying to get out of that office.
 
 
 You have got
-to start thinking bee, my friend.
+to start thinking ''' + insect1 + ''', my friend.
 
 
-- Thinking bee!
+- Thinking ''' + insect1 + '''!
 - Me?
 
 
