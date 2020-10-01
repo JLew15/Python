@@ -4,12 +4,16 @@ number = "Please enter a whole number "
 name = "Please enter a name "
 color = "Please enter a color "
 animal = "Please enter an animal/insect "
+statement = "Please enter a small question "
 color1 = input(color)
 color2 = input(color)
 name1 = input(name)
 name2 = input(name)
 insect1 = input(animal)
 animal1 = input(animal)
+name3 = input(name)
+name4 = input(name)
+jazzy = input(statement)
 
 print('''''' + insect1 + ''' Movie Script - Dialogue Transcript
 
@@ -404,7 +408,7 @@ Outside the hive, flying who knows
 where, doing who knows what.
 
 
-You can'tjust decide to be a Pollen
+You can't just decide to be a Pollen
 Jock. You have to be bred for that.
 
 
@@ -433,7 +437,7 @@ Distant. Distant.
 Look at these two.
 
 
-- Oouple of Hive Harrys.
+- Couple of Hive Harrys.
 - Let's have fun with them.
 
 
@@ -1011,11 +1015,11 @@ Can't fly in rain.
 Mayday! Mayday! ''' + insect1 + ''' going down!
 
 
-Ken, could you close
+''' + name3 + ''', could you close
 the window please?
 
 
-Ken, could you close
+''' + name3 + ''', could you close
 the window please?
 
 
@@ -1128,11 +1132,11 @@ Knocking someone out
 is also a special skill.
 
 
-Right. Bye, Vanessa. Thanks.
+Right. Bye, ''' + name4 + '''. Thanks.
 
 
-- Vanessa, next week? Yogurt night?
-- Sure, Ken. You know, whatever.
+- ''' + name4 + ''', next week? Yogurt night?
+- Sure, ''' + name3 + '''. You know, whatever.
 
 
 - You could put carob chips on there.
@@ -1182,7 +1186,7 @@ Do it. I can't.
 
 
 How should I start it?
-"You like jazz?" No, that's no good.
+"''' + jazzy + '''" No, that's no good.
 
 
 Here she comes! Speak, you fool!
@@ -1541,7 +1545,7 @@ No, no. That's a ''' + insect1 + ''' law.
 You wouldn't break a ''' + insect1 + ''' law.
 
 
-- Her name's Vanessa.
+- Her name's ''' + name4 + '''.
 - Oh, boy.
 
 
@@ -1678,7 +1682,7 @@ Don't be too long.
 Watch this!
 
 
-Vanessa!
+''' + name4 + '''!
 
 
 - We're still here.
@@ -2371,7 +2375,7 @@ In tennis, you attack
 at the point of weakness!
 
 
-It was my grandmother, Ken. She's 81.
+It was my grandmother, ''' + name3 + '''. She's 81.
 
 
 Honey, her backhand's a joke!
@@ -2393,7 +2397,7 @@ I'm helping him sue the ''' + animal1 + ''' race.
 - Hello, ''' + insect1 + '''.
 
 
-This is Ken.
+This is ''' + name3 + '''.
 
 
 Yeah, I remember you. Timberland, size
@@ -2833,7 +2837,7 @@ To a great team!
 Well, hello.
 
 
-- Ken!
+- ''' + name3 + '''!
 - Hello.
 
 
@@ -2869,7 +2873,7 @@ That's where I usually sit.
 Right... there.
 
 
-Ken, ''' + name1 + ''' was looking at your resume,
+''' + name3 + ''', ''' + name1 + ''' was looking at your resume,
 
 
 and he agreed with me that eating with
@@ -2894,7 +2898,7 @@ That's just what
 I was thinking about doing.
 
 
-Ken, I let ''' + name1 + ''' borrow your razor
+''' + name3 + ''', I let ''' + name1 + ''' borrow your razor
 for his fuzz. I hope that was all right.
 
 
@@ -2945,7 +2949,7 @@ Not as much.
 Water bug! Not taking sides!
 
 
-Ken, I'm wearing a Chapstick hat!
+''' + name3 + ''', I'm wearing a Chapstick hat!
 This is pathetic!
 
 
@@ -3003,7 +3007,7 @@ My nerves are fried from riding
 on this emotional roller coaster!
 
 
-Goodbye, Ken.
+Goodbye, ''' + name3 + '''.
 
 
 And for your information,
@@ -3021,7 +3025,7 @@ an aftertaste! I like it!
 
 
 I always felt there was some kind
-of barrier between Ken and me.
+of barrier between ''' + name3 + ''' and me.
 
 
 I couldn't overcome it.
@@ -3417,7 +3421,7 @@ Free the ''' + insect1 + '''s! Free the ''' + insect1 + '''s!
 The court finds in favor of the ''' + insect1 + '''s!
 
 
-Vanessa, we won!
+''' + name4 + ''', we won!
 
 
 I knew you could do it! High-five!
@@ -3705,10 +3709,10 @@ sorry, but I gotta get going.
 I had to open my mouth and talk.
 
 
-Vanessa?
+''' + name4 + '''?
 
 
-Vanessa? Why are you leaving?
+''' + name4 + '''? Why are you leaving?
 Where are you going?
 
 
@@ -3724,7 +3728,7 @@ It's the last chance
 I'll ever have to see it.
 
 
-Vanessa, I just wanna say I'm sorry.
+''' + name4 + ''', I just wanna say I'm sorry.
 I never meant it to turn out like this.
 
 
@@ -3741,7 +3745,7 @@ Wait a minute. Roses. Roses?
 Roses!
 
 
-Vanessa!
+''' + name4 + '''!
 
 
 Roses?!
@@ -3837,7 +3841,7 @@ Security will be tight.
 I have an idea.
 
 
-Vanessa Bloome, FTD.
+''' + name4 + ''' Bloome, FTD.
 
 
 Official floral business. It's real.
@@ -3996,7 +4000,7 @@ Good afternoon, passengers.
 This is your captain.
 
 
-Would a Miss Vanessa Bloome in 24B
+Would a Miss ''' + name4 + ''' Bloome in 24B
 please report to the cockpit?
 
 
@@ -4025,7 +4029,7 @@ This is JFK control tower, Flight 356.
 What's your status?
 
 
-This is Vanessa Bloome.
+This is ''' + name4 + ''' Bloome.
 I'm a florist from New York.
 
 
@@ -4050,7 +4054,7 @@ As a matter of fact, there is.
 From the honey trial?! Oh, great.
 
 
-Vanessa, this is nothing more
+''' + name4 + ''', this is nothing more
 than a big metal ''' + insect1 + '''.
 
 
@@ -4225,7 +4229,7 @@ It's not a tone. I'm panicking!
 I can't do this!
 
 
-Vanessa, pull yourself together.
+''' + name4 + ''', pull yourself together.
 You have to snap out of it!
 
 
@@ -4321,7 +4325,7 @@ Thinking ''' + insect1 + '''!
 Thinking ''' + insect1 + '''! Thinking ''' + insect1 + '''!
 
 
-- Vanessa, aim for the flower.
+- ''' + name4 + ''', aim for the flower.
 - OK.
 
 
