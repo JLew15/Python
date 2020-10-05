@@ -1,6 +1,7 @@
 import random
 
 maxNumber = 10
+numAttempts = 3
 
 theNumber = random.randint(1,maxNumber)
 
@@ -8,7 +9,7 @@ win = False
 
 print("\tWelcome to 'Guess My Number'!")
 print("\nI'm thinking of a number between 1 and",maxNumber)
-print("Try to guess it in 3 attempts.\n")
+print("Try to guess it in", numAttempts + " attempts.\n")
 
 if not win:
 

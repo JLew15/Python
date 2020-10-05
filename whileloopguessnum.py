@@ -9,12 +9,12 @@ maxNumber = 10
 
 print("\tWelcome to 'Guess My Number'!")
 print("\nI'm thinking of a number between 1 and",maxNumber)
-print("Try to guess it in",maxAttempts + " attempts.\n")
+print("Try to guess it in", maxAttempts, " attempts.\n")
 
 while attempts <= maxAttempts:
     if not win:
 
-        guess = int(input("Pick a number between 1 and",maxNumber))
+        guess = int(input("Pick a number between 1 and " + str(maxNumber)))
 
         if guess == theNumber:
             print("You win")
