@@ -12,43 +12,54 @@ def getResponse(question,options,i):
     """!!!MAKE SURE TO INCLUDE INDEX AT END!!!
     INDEX IS USED TO HELP TRACK BAD CHOICES
     GETS RESPONSE FROM DECISION AND MAKES SURE IT IS VALID"""
+
     badInputFile = open("BADINPUTS.txt", "a")
+
     badResponse = ["That's an invalid choice... try again please. ",
      "You're really an idiot, aren't you? Try again...",
      "Come on man, you know that won't work. Try again.",
      "Think about that answer for a second... do you think it would actually work? Try again..."]
+
     count = 0
     while True:
+
         slowText(question)
+
         response = input().upper()
         if response in options:
             badInputFile.close()
             return response
+
         else:
             badInputFile.write(i +" " + response + "\n")
             x = random.choice(badResponse)
             slowText(x)
             badResponse.remove(x)
             count += 1
+
         if not badResponse:
             kill()
 
 def slowText(text):
-    """MAKES SLOW TEXT"""
+
+    """MAKES TYPING EFFECT TEXT"""
+
     for char in text:
         time.sleep(0.01)
         sys.stdout.write(char)
         sys.stdout.flush()
+
     time.sleep(0.5)
     print()
 
 def kill():
-    """KILLS OFF PLAYER"""
+    """KILLS OFF PLAYER AND RESTARTS PROGRAM"""
     slowText("\nDude... you really must be stupid.. You died. Start over.")
     input()
     main()
 
 def main():
+    """MAIN PROGRAM"""
     #Story Variables
     awakening = "You awake within a dark cave..."
     cav_descrip = """\nThe ceiling is too high to see, darkness stretches in all \
@@ -73,6 +84,9 @@ Everything goes black... again."
     cower = "\nAny hope of putting up a fight or creating a diversion is lost to your mind. \
 The terror is overwhelming. You crouch low in the hopes of being missed by \
 whatever entity is causing the piercing whispers."
+    theunderoasys = "You decide to dump out the moldy potatos and carry the candles in the sack \
+while using one to light the deep cave"
+    burnalive = "Sad thing is, you forgot the candles were lit and you caught the sack on fire..."
 
     #Variables CHOICES
     choice1 = "\nYou have a choice between blowing out the candles, \
@@ -109,8 +123,8 @@ from the side of the cave. Do you run down the left or the right"
         #deeper choice
     elif decision in ["PASS", "GO", "DEEPER", "EXPLORE", "MOVE"]:
         slowText(deeper)
-        candle_num = getResponse(candleChoice,["ONE", "HALF", "ALL","1"], "Candle Choice")
-        if candle_num in ["ONE","HALF","ALL","1"]:
+        candle_num = getResponse(candleChoice,["NONE","ZERO","0","ONE", "HALF", "ALL","1"], "Candle Choice")
+        if candle_num in ["ONE","1"]:
     #one candle choice
             walking_one_candle = getResponse(one_candle,["LEFT", "RIGHT", "R", "L"], "Direction Choice One Candle")
             if walking_one_candle in ["LEFT", "RIGHT", "L", "R"]:
@@ -130,11 +144,12 @@ from the side of the cave. Do you run down the left or the right"
 
                     slowText(cower)
 
-            #if candle_num in ["HALF", "ALL"]:
-                #travelingdeeper = getResponse(potatoes,["YES", "NO", "Y", "N"],"Potato Choice")
-                #if ["YES"] in travelingdeeper:
-                    #theunderoasys = input("You decide to dump out the moldy potatos and carry the candles in the sack \
-#while using one to light the deep cave")
+        elif candle_num in ["HALF", "ALL"]:
+            travelingdeeper = getResponse(potatoes,["YES", "NO", "Y", "N"],"Potato Choice")
+            if ["YES"] in travelingdeeper:
+                slowText(theunderoasys)
+                slowText(burnalive)
+                kill()
 
 
 
