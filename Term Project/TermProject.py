@@ -84,9 +84,9 @@ Everything goes black... again."
     cower = "\nAny hope of putting up a fight or creating a diversion is lost to your mind. \
 The terror is overwhelming. You crouch low in the hopes of being missed by \
 whatever entity is causing the piercing whispers."
-    theunderoasys = "You decide to dump out the moldy potatos and carry the candles in the sack \
+    theUnderOasis = "You decide to dump out the moldy potatos and carry the candles in the sack \
 while using one to light the deep cave"
-    burnalive = "Sad thing is, you forgot the candles were lit and you caught the sack on fire..."
+    burnAlive = "Sad thing is, you forgot the candles were lit and you caught the sack on fire..."
 
     #Variables CHOICES
     choice1 = "\nYou have a choice between blowing out the candles, \
@@ -113,12 +113,12 @@ from the side of the cave. Do you run down the left or the right"
 
         slowText(poltargeist)
 
-        decision2 = getResponse(choice2,["RUN"], "Poltargeist Choice")
+        decision2 = getResponse(choice2,["RUN","HIDE","CROUCH"], "Poltargeist Choice")
         if decision2 in ["RUN"]:
                 #flee choice
                 slowText(flee)
     #cower choice
-        else:
+        elif decision2 in ["HIDE","CROUCH"]:
             slowText(cower)
         #deeper choice
     elif decision in ["PASS", "GO", "DEEPER", "EXPLORE", "MOVE"]:
@@ -134,21 +134,21 @@ from the side of the cave. Do you run down the left or the right"
 
                 slowText(poltargeist)
 
-                decision2 = getResponse(choice2,["RUN"], "Poltargeist Choice")
+                decision2 = getResponse(choice2,["RUN", "HIDE","CROUCH"], "Poltargeist Choice")
                 if decision2 in ["RUN"]:
                         #make him run into the wall of the cave ;P lol
 
                         slowText(flee)
 
-                else:
+                elif decision2 in ["HIDE","CROUCH"]:
 
                     slowText(cower)
 
         elif candle_num in ["HALF", "ALL"]:
-            travelingdeeper = getResponse(potatoes,["YES", "NO", "Y", "N"],"Potato Choice")
-            if ["YES"] in travelingdeeper:
-                slowText(theunderoasys)
-                slowText(burnalive)
+            travelingDeeper = getResponse(potatoes,["YES", "NO", "Y", "N"],"Potato Choice")
+            if travelingDeeper in ["YES"]:
+                slowText(theUnderOasis)
+                slowText(burnAlive)
                 kill()
 
 
