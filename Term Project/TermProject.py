@@ -1,10 +1,7 @@
-#ORANGE - Caleb Keller
+#Orange - Caleb Keller
 #Jaiden - Blue
 #Green - Jadiah
 #Pink  - Jack
-#Who put this down?:
-##print("you hear of a haunted cave and are wishing to have a good scare, a ghost hits a rock against your head and then another posseses you while your in a coma.")
-import random
 import time
 import sys
 
@@ -15,8 +12,7 @@ def getResponse(question,options,i):
 
     badInputFile = open("BADINPUTS.txt", "a")
 
-    badResponse = ["That's an invalid choice... try again please. ",
-     "You're really an idiot, aren't you? Try again...",
+    badResponse = ["That's an invalid choice... try again please. ",,
      "Come on man, you know that won't work. Try again.",
      "Think about that answer for a second... do you think it would actually work? Try again..."]
 
@@ -190,7 +186,6 @@ from the side of the cave. Do you run down the left or the right"
 
                 decision2 = getResponse(choice2,["RUN", "HIDE","CROUCH","FIGHT"], "Poltargeist Choice")
                 if decision2 in ["RUN"]:
-                        #make him run into the wall of the cave ;P lol
 
                         slowText(flee)
 
