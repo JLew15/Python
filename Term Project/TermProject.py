@@ -39,7 +39,16 @@ def getResponse(question,options,i):
 
         if not badResponse:
             kill()
-
+def get_number(question,high,low):
+    responce = None
+    while responce not in range(low,high):
+        slowText(question)
+        responce = input()
+        if responce.isnumeric():
+            responce = int(responce)
+        else:
+             slowText("Please enter a number. I can't understand what you put in.")
+    return responce
 def slowText(text):
 
     """MAKES TYPING EFFECT TEXT"""
@@ -58,12 +67,44 @@ def kill():
     input()
     main()
 
+def pop_inv(num, item, inventory):
+    xnum = num
+    while xnum != 0:
+        while len(inventory) < 10:
+            for i in range (xnum):
+                if len(inventory) < 10:
+                    inventory.append(item)
+                    xnum = xnum -1
+            break
+        else:
+            slowText("You are carrying too many items...")
+            drop(inventory)
+            continue
+
+def drop(inventory):
+    run = True
+    while run:
+        dropItem = getResponse("Would you like to drop some items?",["YES","NO","Y","N"],"Drop Inventory Question")
+        if dropItem in ["YES","Y"]:
+            print(inventory)
+            item = getResponse("What item do you want to drop?",inventory,"Drop Question 2")
+            if item in inventory:
+                inventory.remove(item)
+            else:
+                slowText("That is not in your inventory.")
+        else:
+            run = False
+
 def main():
     """MAIN PROGRAM"""
+    lit_candle = True
+    inventory = []
+    numBlow = 0
+
     #Story Variables
     awakening = "You awake within a dark cave..."
     cav_descrip = """\nThe ceiling is too high to see, darkness stretches in all \
-directions and the only source of light is a circle of candles centered around \
+directions and the only source of light is a circle of fifteen candles centered around \
 your prone body."""
     darkness = """\nThe small circle of light is crushed by the oppressive darkness \
 and you feel all warmth leave your body"""
@@ -87,7 +128,9 @@ whatever entity is causing the piercing whispers."
     theUnderOasis = "You decide to dump out the moldy potatos and carry the candles in the sack \
 while using one to light the deep cave"
     burnAlive = "Sad thing is, you forgot the candles were lit and you caught the sack on fire..."
-
+    fight = "You try to put up a fight with whatever spirit you feel haunting you \
+but your punches only hit air, nothing connects and you fall to the ground from \
+exhaustion..."
     #Variables CHOICES
     choice1 = "\nYou have a choice between blowing out the candles, \
 or journeying into the abyssal caverns:"
@@ -99,6 +142,7 @@ all of the candles:"
     secOneChoice = "You walk towards the left tunnel when you hear rocks start to tumble down \
 from the side of the cave. Do you run down the left or the right"
     potatoes = "You see a sack of moldy potatoes just out of the candle light. do you take it?"
+    candleBlow = "You chose to blow out your candles, how many do you want to blow out?"
 
 
 #GAME LOGIC
@@ -109,22 +153,32 @@ from the side of the cave. Do you run down the left or the right"
     decision = getResponse(choice1,["BLOW", "CANDLE","PUT OUT", "PASS", "GO", "DEEPER", "EXPLORE", "MOVE"],"Journey Choice")
     #blowing choice
     if decision in ["BLOW", "CANDLE","PUT OUT"]:
-        slowText(darkness)
+        numBlow = get_number(candleBlow,16,1)
+        if numBlow == 15:
+            lit_candle = False
 
-        slowText(poltargeist)
+            slowText(darkness)
 
-        decision2 = getResponse(choice2,["RUN","HIDE","CROUCH"], "Poltargeist Choice")
-        if decision2 in ["RUN"]:
-                #flee choice
-                slowText(flee)
-    #cower choice
-        elif decision2 in ["HIDE","CROUCH"]:
-            slowText(cower)
-        #deeper choice
-    elif decision in ["PASS", "GO", "DEEPER", "EXPLORE", "MOVE"]:
+            slowText(poltargeist)
+
+            decision2 = getResponse(choice2,["RUN","HIDE","CROUCH","FIGHT"], "Poltargeist Choice")
+            if decision2 in ["RUN"]:
+                    #flee choice
+                    slowText(flee)
+        #cower choice
+            elif decision2 in ["HIDE","CROUCH"]:
+                slowText(cower)
+        #fight choice
+            elif decision2 in ["FIGHT"]:
+                slowText(fight)
+            #deeper choice
+        elif  numBlow<15:
+            decision = "PASS"
+    if decision in ["PASS", "GO", "DEEPER", "EXPLORE", "MOVE"]:
         slowText(deeper)
-        candle_num = getResponse(candleChoice,["NONE","ZERO","0","ONE", "HALF", "ALL","1"], "Candle Choice")
-        if candle_num in ["ONE","1"]:
+        candle_num = get_number(candleChoice,16,1)
+        pop_inv(candle_num,"CANDLE",inventory)
+        if candle_num == 1 and lit_candle:
     #one candle choice
             walking_one_candle = getResponse(one_candle,["LEFT", "RIGHT", "R", "L"], "Direction Choice One Candle")
             if walking_one_candle in ["LEFT", "RIGHT", "L", "R"]:
@@ -134,7 +188,7 @@ from the side of the cave. Do you run down the left or the right"
 
                 slowText(poltargeist)
 
-                decision2 = getResponse(choice2,["RUN", "HIDE","CROUCH"], "Poltargeist Choice")
+                decision2 = getResponse(choice2,["RUN", "HIDE","CROUCH","FIGHT"], "Poltargeist Choice")
                 if decision2 in ["RUN"]:
                         #make him run into the wall of the cave ;P lol
 
@@ -144,12 +198,20 @@ from the side of the cave. Do you run down the left or the right"
 
                     slowText(cower)
 
-        elif candle_num in ["HALF", "ALL"]:
+                elif decision2 in ["FIGHT"]:
+                    slowText(fight)
+
+        elif candle_num>1 and numBlow>= 14:
+            travelingDeeper = getResponse(potatoes,["YES", "NO", "Y", "N"],"Potato Choice")
+            if travelingDeeper in ["YES"]:
+                slowText(theUnderOasis)
+        elif candle_num > 1:
             travelingDeeper = getResponse(potatoes,["YES", "NO", "Y", "N"],"Potato Choice")
             if travelingDeeper in ["YES"]:
                 slowText(theUnderOasis)
                 slowText(burnAlive)
                 kill()
+
 
 
 

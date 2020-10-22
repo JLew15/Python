@@ -2,3 +2,12 @@ Poltargeist Choice HIDE
 Poltargeist Choice CROUCH
 Poltargeist Choice HIDE
 Poltargeist Choice CROUCH
+Journey Choice 8
+Journey Choice BOW
+Drop Question 2 CANDLE
+Drop Question 2 2
+Drop Question 2 CANDLE
+Drop Question 2 CANDLE
+Drop Question 2 CANDLE
+Drop Inventory Question YS
+Drop Question 2 I DONT KNOW
