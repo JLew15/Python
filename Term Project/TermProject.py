@@ -4,6 +4,7 @@
 #Pink  - Jack
 import time
 import sys
+import random
 
 def getResponse(question,options,i):
     """!!!MAKE SURE TO INCLUDE INDEX AT END!!!
@@ -12,11 +13,10 @@ def getResponse(question,options,i):
 
     badInputFile = open("BADINPUTS.txt", "a")
 
-    badResponse = ["That's an invalid choice... try again please. ",,
+    badResponse = ["That's an invalid choice... try again please. ",
      "Come on man, you know that won't work. Try again.",
      "Think about that answer for a second... do you think it would actually work? Try again..."]
 
-    count = 0
     while True:
 
         slowText(question)
@@ -31,10 +31,12 @@ def getResponse(question,options,i):
             x = random.choice(badResponse)
             slowText(x)
             badResponse.remove(x)
-            count += 1
 
         if not badResponse:
+            slowText("Your mind falters from being unable to comprehend the choices \
+you made...")
             kill()
+
 def get_number(question,high,low):
     responce = None
     while responce not in range(low,high):
@@ -45,6 +47,7 @@ def get_number(question,high,low):
         else:
              slowText("Please enter a number. I can't understand what you put in.")
     return responce
+
 def slowText(text):
 
     """MAKES TYPING EFFECT TEXT"""
@@ -96,6 +99,7 @@ def main():
     lit_candle = True
     inventory = []
     numBlow = 0
+    badDay = False
 
     #Story Variables
     awakening = "You awake within a dark cave..."
@@ -107,17 +111,10 @@ and you feel all warmth leave your body"""
     poltargeist = """\nBefore long, you begin to hear whispers echoing off the walls of the cavern. \
 The voices start to draw nearer..."""
     flee = "\nYou turn opposite the whispers, and sprint forward. You feel the \
-air rushing past your ears before... it doesn't. You run headlong into a very hard surface. \
-Everything goes black... again."
-    cower = "\nAny hope of putting up a fight or creating a diversion is lost to your mind. \
-The terror is overwhelming. You crouch low in the hopes of being missed by \
-whatever entity is causing the piercing whispers."
+air rushing past your ears..."
     deeper = "\nYou choose to go deeper into the blinding darkness."
     direction = "As the sound of grinding stone subsides, it dawns on you that \
 you are in complete darkness once again."
-    flee = "\nYou turn opposite the whispers, and sprint forward. You feel the \
-air rushing past your ears before... it doesn't. You run headlong into a very hard surface. \
-Everything goes black... again."
     cower = "\nAny hope of putting up a fight or creating a diversion is lost to your mind. \
 The terror is overwhelming. You crouch low in the hopes of being missed by \
 whatever entity is causing the piercing whispers."
@@ -127,6 +124,8 @@ while using one to light the deep cave"
     fight = "You try to put up a fight with whatever spirit you feel haunting you \
 but your punches only hit air, nothing connects and you fall to the ground from \
 exhaustion..."
+    tooDark = "It is too dark to see where you are going, you run head first into \
+one of the solid walls of the cave..."
     #Variables CHOICES
     choice1 = "\nYou have a choice between blowing out the candles, \
 or journeying into the abyssal caverns:"
@@ -134,7 +133,7 @@ or journeying into the abyssal caverns:"
     candleChoice = "Before you go deeper \
 you have a choice of how many candles you will take none, one, half, or \
 all of the candles:"
-    one_candle = "\nWith your one candle, you find the cave branches off to the left and right. Where do you go?"
+    light_candle = "\nWith your light, you find the cave branches off to the left and right. Where do you go?"
     secOneChoice = "You walk towards the left tunnel when you hear rocks start to tumble down \
 from the side of the cave. Do you run down the left or the right"
     potatoes = "You see a sack of moldy potatoes just out of the candle light. do you take it?"
@@ -159,8 +158,9 @@ from the side of the cave. Do you run down the left or the right"
 
             decision2 = getResponse(choice2,["RUN","HIDE","CROUCH","FIGHT"], "Poltargeist Choice")
             if decision2 in ["RUN"]:
-                    #flee choice
                     slowText(flee)
+                    slowText(tooDark)
+                    kill()
         #cower choice
             elif decision2 in ["HIDE","CROUCH"]:
                 slowText(cower)
@@ -172,15 +172,33 @@ from the side of the cave. Do you run down the left or the right"
             decision = "PASS"
     if decision in ["PASS", "GO", "DEEPER", "EXPLORE", "MOVE"]:
         slowText(deeper)
-        candle_num = get_number(candleChoice,16,1)
+        candle_num = get_number(candleChoice,16,0)
         pop_inv(candle_num,"CANDLE",inventory)
+        if candle_num == 0:
+            slowText(darkness)
+            slowText(poltargeist)
+            decision2 = getResponse(choice2,["RUN","HIDE","CROUCH","FIGHT"], "Poltargeist Choice")
+            if decision2 in ["RUN"]:
+                    slowText(flee)
+                    slowText(tooDark)
+                    kill()
+        #cower choice
+            elif decision2 in ["HIDE","CROUCH"]:
+                slowText(cower)
+        #fight choice
+            elif decision2 in ["FIGHT"]:
+                slowText(fight)
+
         if candle_num == 1 and lit_candle:
-    #one candle choice
-            walking_one_candle = getResponse(one_candle,["LEFT", "RIGHT", "R", "L"], "Direction Choice One Candle")
-            if walking_one_candle in ["LEFT", "RIGHT", "L", "R"]:
-                thepassage = getResponse(secOneChoice,["R", "RIGHT", "L", "LEFT"], "Second Direction Choice One Candle")
+    #candle choice
+            walking_candle = getResponse(light_candle,["LEFT", "RIGHT", "R", "L"], "Direction Choice Candle")
+            if walking_candle in ["LEFT", "RIGHT", "L", "R"]:
+                thepassage = getResponse(secOneChoice,["R", "RIGHT", "L", "LEFT"], "Second Direction Choice Candle")
                 if thepassage in ["R", "RIGHT", "L", "LEFT"]:
-                    slowText(direction)
+                    badDayRan = random.randint(0,10)
+                    if badDayRan == 7:
+                        slowText(direction)
+                        badDay = True
 
                 slowText(poltargeist)
 
@@ -188,6 +206,9 @@ from the side of the cave. Do you run down the left or the right"
                 if decision2 in ["RUN"]:
 
                         slowText(flee)
+                        if badDay:
+                            slowText(tooDark)
+                            kill()
 
                 elif decision2 in ["HIDE","CROUCH"]:
 

@@ -11,3 +11,8 @@ Drop Question 2 CANDLE
 Drop Question 2 CANDLE
 Drop Inventory Question YS
 Drop Question 2 I DONT KNOW
+Drop Inventory Question 8
+Drop Inventory Question 8
+Journey Choice 8
+Journey Choice 4
+Journey Choice 5
