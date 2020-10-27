@@ -57,7 +57,7 @@ def show_time():
     root.after(1000,show_time)
 
 def alarm_snd():
-    for i in range(5):
+    for i in range(2):
         winsound.Beep(750,1000)
         winsound.Beep(1000,1000)
         winsound.Beep(1250,1000)

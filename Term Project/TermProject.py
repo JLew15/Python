@@ -134,7 +134,9 @@ or journeying into the abyssal caverns:"
 you have a choice of how many candles you will take none, one, half, or \
 all of the candles:"
     light_candle = "\nWith your light, you find the cave branches off to the left and right. Where do you go?"
-    secOneChoice = "You walk towards the left tunnel when you hear rocks start to tumble down \
+    secLeftChoice = "You walk towards the left tunnel when you hear rocks start to tumble down \
+from the side of the cave. Do you run down the left or the right"
+    secRightChoice = "You walk towards the left tunnel when you hear rocks start to tumble down \
 from the side of the cave. Do you run down the left or the right"
     potatoes = "You see a sack of moldy potatoes just out of the candle light. do you take it?"
     candleBlow = "You chose to blow out your candles, how many do you want to blow out?"
@@ -145,10 +147,11 @@ from the side of the cave. Do you run down the left or the right"
     #waking up
     slowText(cav_descrip)
     #slowText(choice1)
-    decision = getResponse(choice1,["BLOW", "CANDLE","PUT OUT", "PASS", "GO", "DEEPER", "EXPLORE", "MOVE"],"Journey Choice")
+    decision = getResponse(choice1,["BLOW","BLOWING", "CANDLE","PUT OUT", "PASS", "GO", "DEEPER", "EXPLORE", "MOVE","JOURNEY","JOURNEYING"],"Journey Choice")
     #blowing choice
-    if decision in ["BLOW", "CANDLE","PUT OUT"]:
+    if decision in ["BLOW", "CANDLE","BLOWING","PUT OUT"]:
         numBlow = get_number(candleBlow,16,1)
+        #If you blow out all candles, too dark.
         if numBlow == 15:
             lit_candle = False
 
@@ -164,16 +167,20 @@ from the side of the cave. Do you run down the left or the right"
         #cower choice
             elif decision2 in ["HIDE","CROUCH"]:
                 slowText(cower)
+                kill()
         #fight choice
             elif decision2 in ["FIGHT"]:
                 slowText(fight)
-            #deeper choice
+                kill()
+        #deeper choice
         elif  numBlow<15:
             decision = "PASS"
-    if decision in ["PASS", "GO", "DEEPER", "EXPLORE", "MOVE"]:
+    if decision in ["PASS", "GO", "DEEPER", "EXPLORE", "MOVE","JOURNEY", "JOURNEYING"]:
         slowText(deeper)
+        #Ability to choose candles.
         candle_num = get_number(candleChoice,16,0)
         pop_inv(candle_num,"CANDLE",inventory)
+        #If you take no candles into the cave
         if candle_num == 0:
             slowText(darkness)
             slowText(poltargeist)
@@ -185,15 +192,17 @@ from the side of the cave. Do you run down the left or the right"
         #cower choice
             elif decision2 in ["HIDE","CROUCH"]:
                 slowText(cower)
+                kill()
         #fight choice
             elif decision2 in ["FIGHT"]:
                 slowText(fight)
+                kill()
 
         if candle_num == 1 and lit_candle:
     #candle choice
             walking_candle = getResponse(light_candle,["LEFT", "RIGHT", "R", "L"], "Direction Choice Candle")
-            if walking_candle in ["LEFT", "RIGHT", "L", "R"]:
-                thepassage = getResponse(secOneChoice,["R", "RIGHT", "L", "LEFT"], "Second Direction Choice Candle")
+            if walking_candle in ["LEFT", "L"]:
+                thepassage = getResponse(secLeftChoice,["R", "RIGHT", "L", "LEFT"], "Second Direction Choice Candle")
                 if thepassage in ["R", "RIGHT", "L", "LEFT"]:
                     badDayRan = random.randint(0,10)
                     if badDayRan == 7:
@@ -213,9 +222,39 @@ from the side of the cave. Do you run down the left or the right"
                 elif decision2 in ["HIDE","CROUCH"]:
 
                     slowText(cower)
+                    kill()
 
                 elif decision2 in ["FIGHT"]:
                     slowText(fight)
+                    kill()
+
+            if walking_candle in ["RIGHT", "R"]:
+                thepassage = getResponse(secRightChoice,["R", "RIGHT", "L", "LEFT"], "Second Direction Choice Candle")
+                if thepassage in ["R", "RIGHT", "L", "LEFT"]:
+                    badDayRan = random.randint(0,10)
+                    if badDayRan == 7:
+                        slowText(direction)
+                        badDay = True
+
+                slowText(poltargeist)
+
+                decision2 = getResponse(choice2,["RUN", "HIDE","CROUCH","FIGHT"], "Poltargeist Choice")
+                if decision2 in ["RUN"]:
+
+                        slowText(flee)
+                        if badDay:
+                            slowText(tooDark)
+                            kill()
+
+                elif decision2 in ["HIDE","CROUCH"]:
+
+                    slowText(cower)
+                    kill()
+
+                elif decision2 in ["FIGHT"]:
+                    slowText(fight)
+                    kill()
+
 
         elif candle_num>1 and numBlow>= 14:
             travelingDeeper = getResponse(potatoes,["YES", "NO", "Y", "N"],"Potato Choice")
@@ -227,20 +266,6 @@ from the side of the cave. Do you run down the left or the right"
                 slowText(theUnderOasis)
                 slowText(burnAlive)
                 kill()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
