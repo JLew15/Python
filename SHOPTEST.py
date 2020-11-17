@@ -1,16 +1,6 @@
 import time
 import sys
 
-def getNumber(question,high,low):
-    responce = None
-    while responce not in range(low,high):
-        slowText(question,0.03)
-        responce = input()
-        if responce.isnumeric():
-            responce = int(responce)
-        else:
-             slowText("Please enter a number. I can't understand what you put in.",0.01)
-    return responce
 
 
 def slowText(text,amtime):
@@ -25,96 +15,16 @@ def slowText(text,amtime):
     time.sleep(0.5)
     print()
 
-def endGame():
-    yesno = input("Do you want to quit?\n")
-    if yesno == "yes":
-        slowText("You chose to win. Okay, you won.",0.03)
-        input()
-        quit()
-    else:
-        slowText("Mmmmmmmmmmmmmmmkay then.",0.01)
-
-def learnTrail():
-    slowText("You will be transversing 2,000 miles across the plains and mountains\
-. You will travel on covered wagons with oxen through heavy terrain.",0.02)
-    input()
-    slowText("Crossing rivers will be tricky with the option to either by a ferry\
- float across or have the oxen pull through the rivers.",0.02)
-    input()
-    slowText("If you are low on food you can hunt and get your rations back up",0.02)
-    input()
-    slowText("There will be choices between navigating rivers rapids or taking\
- the long way by transversing land, choose wisely.",0.02)
-    input()
-    slowText("Never give up and try over and over till you win and then go for\
- fastest trailer!",0.02)
-    input()
-    slowText("The absolute best #1 Lads of the land and sky AKA the develepers\
- are Ethan (absolute lad) Eash and Jaiden (The man and a half) Lewis",0.2)
-    input()
-
-def characters():
-    slowText("1)Banker: Starts with $600",0.03)
-    slowText("2)Carpenter: Starts with $400",0.03)
-    slowText("3)Farmer: Starts with $200",0.03)
-    slowText("""4)0$ H┴IM S┴ɹ∀┴S :ɹƎɹƎpɹ∩W""",0.03)
-    characterChoice = getNumber("Choose your character...",5,1)
-    if characterChoice == 1:
-        character = "Banker"
-        money = 600
-        slowText("You have chose to be a Banker. Are you sure of your answer?",0.03)
-        returnChoice = getNumber("Choose 1 for yes, Choose 2 for no.",3,1)
-        if returnChoice == 2:
-            money = 0
-            characters()
+def getNumber(question,high,low):
+    responce = None
+    while responce not in range(low,high):
+        slowText(question,0.03)
+        responce = input()
+        if responce.isnumeric():
+            responce = int(responce)
         else:
-            screech = 1
-            return screech
-    elif characterChoice == 2:
-        character = "Carpenter"
-        money = 400
-        slowText("You have chose to be a Carpenter. Are you sure of your answer?",0.03)
-        returnChoice = getNumber("Choose 1 for yes, Choose 2 for no.",3,1)
-        if returnChoice == 2:
-            money = 0
-            characters()
-        else:
-            screech = 2
-            return screech
-    elif characterChoice == 3:
-        character = "Farmer"
-        money = 200
-        slowText("You have chose to be a Farmer. Are you sure of your answer?",0.03)
-        returnChoice = getNumber("Choose 1 for yes, Choose 2 for no.",3,1)
-        if returnChoice == 2:
-            money = 0
-            characters()
-        else:
-            screech = 3
-            return screech
-    else:
-        character = "Murderer"
-        money = 0
-        slowText("YOU ARE A MURDERER. Are you sure?",0.06)
-        returnChoice = getNumber("Choose 1 for yes, Choose 2 for no",3,1)
-        if returnChoice == 2:
-            money = 0
-            characters()
-        else:
-            screech = 4
-            return screech
-
-
-def getName():
-    while True:
-        slowText("Please enter a name.",0.02)
-        response = input()
-        if len(response) > 1:
-            return response
-        else:
-            continue
-
-
+             slowText("Please enter a number. I can't understand what you put in.",0.01)
+    return responce
 
 def shop (Ox, Food, Ammo, Clothes, Parts, Money):
     bill = 0
@@ -261,93 +171,12 @@ def shop (Ox, Food, Ammo, Clothes, Parts, Money):
             shop(ox, food, ammo, clothes, parts, money)
 
 
-def checkSupplies(ox,food,ammo,clothes,parts,money):
-    slowText("You have " + str(ox) + " oxen",0.03)
-    slowText("You have " + str(food) + " rations",0.03)
-    slowText("You have " + str(ammo) + " cartridges",0.03)
-    slowText("You have " + str(clothes) + " clothes",0.03)
-    slowText("You have " + str(money) + " money",0.03)
 
-
-
-
-
-
-
-
-
-
-
-
-def makeLogo():
-    slowText("""
-
-\t\tYYYYYYY       YYYYYYY               AAA                    BBBBBBBBBBBBBBBBB
-\t\tY:::::Y       Y:::::Y              A:::A                   B::::::::::::::::B
-\t\tY:::::Y       Y:::::Y             A:::::A                  B::::::BBBBBB:::::B
-\t\tY::::::Y     Y::::::Y            A:::::::A                 BB:::::B     B:::::B
-\t\tYYY:::::Y   Y:::::YYY           A:::::::::A                  B::::B     B:::::B
-\t\t   Y:::::Y Y:::::Y             A:::::A:::::A                 B::::B     B:::::B
-\t\t    Y:::::Y:::::Y             A:::::A A:::::A                B::::BBBBBB:::::B
-\t\t     Y:::::::::Y             A:::::A   A:::::A               B:::::::::::::BB
-\t\t      Y:::::::Y             A:::::A     A:::::A              B::::BBBBBB:::::B
-\t\t       Y:::::Y             A:::::AAAAAAAAA:::::A             B::::B     B:::::B
-\t\t       Y:::::Y            A:::::::::::::::::::::A            B::::B     B:::::B
-\t\t       Y:::::Y           A:::::AAAAAAAAAAAAA:::::A           B::::B     B:::::B
-\t\t       Y:::::Y          A:::::A             A:::::A        BB:::::BBBBBB::::::B
-\t\t    YYYY:::::YYYY      A:::::A               A:::::A       B:::::::::::::::::B
-\t\t    Y:::::::::::Y     A:::::A                 A:::::A      B::::::::::::::::B
-\t\t    YYYYYYYYYYYYY    AAAAAAA                   AAAAAAA     BBBBBBBBBBBBBBBBB
-""",0.01)
-
-
-
-
-    slowText("\n\n\n\n\t\t\t\t\tCOPYRIGHT of YAB Co. (C) 2020",0.1)
-
-money = 0
+money = 1000
 food = 0
 ammo = 0
 clothes = 0
 parts = []
 ox = 0
 inventory = []
-makeLogo()
-numbie = getNumber("""Push 1 to play
-Push 2 to learn
-Push 3 to win""",4,1)
-
-if numbie == 1:
-    screech = characters()
-    if screech == 1:
-        character = "Banker"
-        money = 600
-    elif screech == 2:
-        character = "Carpenter"
-        money = 400
-    elif screech == 3:
-        character = "Farmer"
-        money = 200
-    else:
-        character = "Murderer"
-        money = 0
-    name = getName()
-    members = getNumber("How many members are in your family?",11,2)
-    shop(ox, food, ammo, clothes, parts, money)
-    print()
-    print()
-    print()
-    print()
-    print()
-    print()
-    print()
-    print()
-    print()
-    checkSupplies(ox,food,ammo,clothes,parts,money)
-elif numbie == 2:
-    learnTrail()
-
-else:
-    endGame()
-
-makeLogo()
+shop(money, food, ammo, clothes, parts, ox)
