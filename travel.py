@@ -2,7 +2,7 @@ import random
 
 def travel(pace,weather,health):
     speed = 0
-    weather_mod = 0
+    weatherMod = 0
     hours = 0
     if pace == "fast":
         speed = 4
@@ -17,16 +17,16 @@ def travel(pace,weather,health):
     else:
         hours = 8
     if weather == "blizzard":
-        weather_mod = 0
+        weatherMod = 0
     elif weather == "hot":
-        weather_mod = .5
+        weatherMod = .5
     elif weather == "rain":
-        weather_mod = .25
+        weatherMod = .25
     else:
-        weather_mod = 1
-    miles = hours * speed * weather_mod
-    random_mod = random.randint(0,5)
-    return miles-random_mod
+        weatherMod = 1
+    miles = hours * speed * weatherMod
+    randomMod = random.randint(0,5)
+    return miles-randomMod
 
 weather = "good"
 health = "good"

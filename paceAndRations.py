@@ -1,4 +1,4 @@
-def change_Rations(rations):
+def changeRations(rations):
     print ("your current Rations are", rations)
     options = ["full","half","quarter"]
     index = 1
@@ -19,7 +19,7 @@ def change_Rations(rations):
         except:
             print ("not a good input")
 
-def change_pace(pace):
+def changePace(pace):
     print ("your current pace is", pace)
     options = ["slow","normal","fast"]
     index = 1

@@ -1,5 +1,7 @@
 import time
 import sys
+import datetime
+import random
 
 def getNumber(question,high,low):
     responce = None
@@ -304,6 +306,165 @@ def makeLogo():
 
 
     slowText("\n\n\n\n\t\t\t\t\tCOPYRIGHT of YAB Co. (C) 2020",0.1)
+
+
+def turn(health,weather,rations,healthCondition,food,currentDate,ox,members):
+    weather = random.choice(["hot","good","fair","poor","windy","rain","blizzard"])
+
+    #Sets Health Condition based on amount of Health
+    if health >= 80:
+        healthCondition = "good"
+    elif health < 80 and health >= 50:
+        healthCondition = "fair"
+    else:
+        healthCondition = "poor"
+
+
+    #Sets ration modifier based on what ration setting you are on.
+    if rations == "full":
+        rationsModifier = 2
+    elif rations == "half":
+        rationsModifier = 1
+    else:
+        rationsModifier = 0.5
+
+    problem = random.choice(["lost","snake bite","sick","ox died","none","none","none","none","none","none","none","none","none","none"])
+
+    if problem == "lost":
+        lost = random.randint(1,7)
+        print("One of your members got lost for",lost,"days")
+        currentDate += datetime.timedelta(days = lost)
+        food -= members*rationsModifier*lost
+    elif problem == "snake bite":
+        health -= 50
+    elif problem == "sick":
+        health -= 20
+    elif problem == "ox died":
+        ox -= 1
+        food += 50
+    else:
+        pass
+
+    print(str.format("""
+   .....                                        ..'..                              ..',,,'..
+..',;;;,,'...  ...                       ..'''',,;;;;,..                       ..',;;;;;;;;,,,'..
+,;;,;;;;;,;;;,,,;,,...               ..',;;;;;,,;;;;;;;;,'..     ..''....',,'',,;;;;;;;;;;,;;;;;,'..
+;;;;;;;;;;;;;;;;;;;;;,,....'..   ..',;;;;;;;;;;;;;;;;;;;;;;,'..',;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,,',,;,,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+''''''''''''''',,,''''.........'''''',,,''''''''''''',,;;;;;,,,,,,,,,,,,;;;;;;;;;;;;,,,''...'',,,;;;
+                                                      ........        ...............            ...
+ +-----------------------------+
+ |Date:{:_>24}|
+ |Weather:{:_>21}|           ..'''''''''''..                         ..''''''.
+ |Health:{:_>22}|          ,:ccccllllllllc::::,...  ......  ..,::::::clclllcc,.
+ |Miles Travled:{:_>15}|         .cc'.;cccclccccccccclc'.;cllllc;.'ccccccccccccclcl;.
+ |Miles To Go:{:_>17}|          .;c, .,:clcclclcclcclc'.clcccclc.'cccccccccccclll:.
+ |Food:{:_>24}|           .cc.  .';cccclcclcclc'.clcccclc.'cccccccccccccc:.
+ +-----------------------------+            ,:;.   'ccccccclcclc'.clcccclc.'cccccccccccccc'
+                 ..                         .;c;.   ,ccclccccllc'.clcccllc.'cccccclccllcc,
+          .,,. .'::.  ....                   .:c.   .clcccccclcc'.cccccclc.'cccccccccccc'
+           .,:::cl,..',';c;:;;;;:;;;'.        ',.   .:cccccccccc..:cccccc:.'ccccccccccc:.
+         .';clcccl,';;::ccccccccccccc:.       ....  ......,,,,'.  .............',,,,..','.
+          ...';:;,,;cccllcclcclccccccc........'.''.',...',.,;',,. .,','',,,  .,'';,','.''.
+                .;:clcclcccclllccccc:,.      ...',... .,'. ', .';. ..,',,.. .;. .,. .,,.
+                 .'clcccc::;'.,:lclc.         ..''    ';...;;...;'   ''''   ,;..';,..';.
+                  .cc,:c;..  .,cc,:c.                 .,'. ', .',.          .;. .,. .,,.
+                .':c,..;l'   .';:;:c.                  .',',;','.            .,,';,',.
+'..''.''''.'''.',:c:,'';:,''''',::::,'''''...'''''''''''',;;;;,''''''''''..'''';;;;;,'''.''''''''''.
+;;;;;;;;;;;;;;,;;:::;;;::;,,;;;;::;;;;;;;;;;;;;;;;;;;;;;;;;;;,;;;;;;;;;;;;;;;;;;,;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;,;::::;;;:;;;;;;;:::;;;;;;;;;;;;;;;;;;;;;;;;;,;;,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,
+;;;;;;;;;;;;;;;;;:::;;;::;;;;;;;::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,;;;;;;;;;;;;;;;;;""",currentDate.strftime("%A %b, %d, %Y"),weather,health,milesTraveled,totalMiles,food))
+    input()
+
+def rest(health,rations,current_day):
+    try:
+        days = int(input("How many days do you want to rest"))
+        if rations == "full":
+            healthMod = 2
+        elif rations == "half":
+            healthMod = 1
+        elif rations == "quarter":
+            healthMod = .5
+        currentDay += days
+    except:
+        print("not a good option")
+    healthGain = 10 * days * healthMod
+    if (healthGain + health) > 100:
+        health = 100
+    else:
+        health += healthGain
+
+    return health,currentDay
+
+def changeRations(rations):
+    print ("your current Rations are", rations)
+    options = ["full","half","quarter"]
+    index = 1
+    for option in options:
+        print(str.format("{}     {}",index,option))
+        index+=1
+    while True:
+        try:
+            choice = int(input("choose your pace"))
+            if choice == 1:
+                return "full"
+            elif choice == 2:
+                return "half"
+            elif choice == 3:
+                return "quarter"
+            else:
+                print("not an option")
+        except:
+            print ("not a good input")
+
+def changePace(pace):
+    print ("your current pace is", pace)
+    options = ["slow","normal","fast"]
+    index = 1
+    for option in options:
+        print(str.format("{}     {}",index,option))
+        index+=1
+    while True:
+        try:
+            choice = int(input("choose your pace"))
+            if choice == 1:
+                return "slow"
+            elif choice == 2:
+                return "normal"
+            elif choice == 3:
+                return "fast"
+            else:
+                print("not an option")
+        except:
+            print ("not a good input")
+
+def travel(pace,weather,health):
+    speed = 0
+    weatherMod = 0
+    hours = 0
+    if pace == "fast":
+        speed = 4
+    elif pace == "slow":
+        speed = 1
+    else:
+        speed = 2
+    if health == "poor":
+        hours = 2
+    elif health == "fair":
+        hours = 4
+    else:
+        hours = 8
+    if weather == "blizzard":
+        weatherMod = 0
+    elif weather == "hot":
+        weatherMod = .5
+    elif weather == "rain":
+        weatherMod = .25
+    else:
+        weatherMod = 1
+    miles = hours * speed * weatherMod
+    randomMod = random.randint(0,5)
+    return miles-randomMod
 
 money = 0
 food = 0

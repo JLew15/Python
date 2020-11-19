@@ -2,25 +2,25 @@ def rest(health,rations,current_day):
     try:
         days = int(input("How many days do you want to rest"))
         if rations == "full":
-            health_mod = 2
+            healthMod = 2
         elif rations == "half":
-            health_mod = 1
+            healthMod = 1
         elif rations == "quarter":
-            health_mod = .5
-        current_day += days
+            healthMod = .5
+        currentDay += days
     except:
         print("not a good option")
-    health_gain = 10 * days * health_mod
-    if (health_gain + health) > 100:
+    healthGain = 10 * days * healthMod
+    if (healthGain + health) > 100:
         health = 100
     else:
-        health += health_gain
+        health += healthGain
 
-    return health,current_day
+    return health,currentDay
 
 health = 50
 rations = "half"
-current_day = 1
-health, current_day = rest(health,rations,current_day)
+currentDay = 1
+health, currentDay = rest(health,rations,currentDay)
 print(health)
-print(current_day)
+print(currentDay)
