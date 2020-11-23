@@ -10,9 +10,9 @@ def travel(pace,weather,health):
         speed = 1
     else:
         speed = 2
-    if health == "poor":
+    if healthCondition == "poor":
         hours = 2
-    elif health == "fair":
+    elif healthCondition == "fair":
         hours = 4
     else:
         hours = 8
@@ -29,7 +29,7 @@ def travel(pace,weather,health):
     return miles-randomMod
 
 weather = "good"
-health = "good"
+healthCondition = "good"
 pace = "normal"
 miles = travel(pace,weather,health)
 print(miles)
