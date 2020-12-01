@@ -505,6 +505,7 @@ if numbie == 1:
     print()
     print()
     checkSupplies(ox,food,ammo,clothes,parts,money)
+
 elif numbie == 2:
     learnTrail()
 
