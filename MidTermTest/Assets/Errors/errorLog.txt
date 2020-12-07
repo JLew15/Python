@@ -1,1 +1,14 @@
-[Errno 2] No such file or directory: 'Assets\\TestFiles\\text.txt'[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt'
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:27:34
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:24
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:26
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:26
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:27
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:28
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:29
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:30
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:31
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:31
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:33
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:34
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:35
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:36
