@@ -80,7 +80,7 @@ def createReportCard(name,score,totalQuestions):
 
 
 def main():
-    file = openFile("exampleTest.txt","r")#Will need to change file name to match the test you are taking.
+    file = openFile("Joseph_Luke_Mid_Term.txt","r")#Will need to change file name to match the test you are taking.
     title = nextLine(file)
     name, testTime = getName()
     welcome(title,name,testTime)

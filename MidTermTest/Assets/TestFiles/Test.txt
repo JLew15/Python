@@ -1,161 +1,161 @@
-TestInfo
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
-QuestionCat
-Question
-Answer1
-Answer2
-Answer3
-Answer4
-CorrectAnswer
-Explanation
+This is a test for Python Midterms, it has been written by dkjfsa
+Concatenation
+How would you CONCATENATE Cat and Dog into a single word?
+"Cat" + "Dog"
+Cat + Dog
+Cat,Dog
+"Cat","Dog"
+1
+Concatenation is adding the String to the other String./ The result of this would be CatDog
+Concatenation
+What do programmers call the process of joining together two strings?
+Gluing
+Joining
+Melding
+Concatenation
+4
+It is a common term used among programmers to describe adding two words together.
+Data Types
+What do we call an area in computer memory that holds a named value?
+Vault
+Variable
+Locker
+Dictionary
+2
+Variable is the terminology used as an area in computer memory that holds a value.
+Data Types
+Which of the following values is not a valid integer?
+-2
+1000
+5.5
+0
+3
+Since 5.5 is a number containing a decimal and is not a whole number, it is not / a valid integer.
+Variable Assigning
+How would you assign the value 1000 to an integer named bigNumber?
+bigNumber = 1000
+bigNumber(1000)
+bigNumber = 1,000
+The number is too large to be assigned
+1
+To assign a number to a variable, you simply put the number OUT OF QUOTES in front / of the equals sign.
+Print Statements
+Which of the following statements will print GO FOR IT to the screen?
+print"GO FOR IT"
+display("GO FOR IT")
+print("GO FOR IT")
+show(GO FOR IT)
+3
+To print text to a screen, you would use print() and put the text you want printed/ in quotation marks inside of the parenthesis
+Floating Point Numbers
+Which of the following is not a valid floating point number?
+-12.4
+"Three Point Five"
+3.0
+All of these are invalid
+2
+"Three Point Five" is a String, not a number.
+Print Statements
+Which of the following statements about the print() function are true?
+print() with a single string parameter will display the exact string you pass in
+print() with multiple parameters will automatically convert all values to strings/and join them together with a space
+Neither of these are true
+Both of these are true
+4
+print() can be used with a single parameter, or as many parameters as you want.
+Getting User Input
+What type of data does the input() function return?
+String
+Floating Point Number
+Integer
+It depends on what the user types in
+1
+An input() will always return a String unless parsed.
+Getting User Input
+Which of the following best describes the input() parameter?
+It contains the length of time the function will wait for an answer
+It contains the name of the variable that will hold the output
+It contains a text prompt for the user to enter a value
+It contains the number of values the user must enter
+3
+If you do input("Scream") it will print "Scream" out to the screen, but will also/be waiting for input.
+Getting User Input
+If the user enters 18 in response to an input() question, what kind of data is returned?
+An integer containing 18
+A floating point containing 18.0
+A string containing 18
+A True Boolean value showing success
+3
+An input() function will always return a String unless parsed.
+Parsing Data
+Which function would you use to convert a string value to a floating point value?
+parse()
+int()
+decimal()
+float()
+4
+float() will parse any data type passed in, into a floating point number.
+String Formatting
+How many input parameters are provided to the str.format() function?
+1 or more as needed to build your output string
+3 only
+1 only
+None
+1
+You can pass as many parameters in as needed with the str.format() function.
+Data Types
+Which of the following data types holds only True and False values?
+Integer
+Boolean
+Floating Point
+String
+2
+True and False are Boolean values.
+Mathematical Operators
+Which of the following operators mean equal to?
+<
+>=
+!
+==
+4
+The == operator means equal to.
+Mathematical Operators
+If "numGrapes" is equal to 10, which of the following expressions will produce a/ False result?
+numGrapes != 10
+numGrapes < 9
+numGrapes >= 11
+All of these are false
+4
+None of these expressions are true.
+Mathematical Operators
+Which of the following is NOT a mathematical operator?
++
+Slash
+!=
+*
+3
+!= are contradictive to each other. You can't equal but not equal something.
+Logical Equations
+The if statement relies on what type of expression?
+Mathematical
+Logical
+Assignment
+Repeating
+2
+An if statement will only work if it is used with a logical expression, an expression / returning true or false.
+Bonus Questions
+What is the answer to this question?
+This one?
+Maybe this one?
+How about this one?
+Hmmmmmmmmm.
+3
+If you got it wrong, maybe you should have checked the code ;)
+Bonus Questions
+What is 30*200*15+0
+Too many numbers
+5646432156
+121244522
+90000
+4
+Either do the math or check the code ;)
