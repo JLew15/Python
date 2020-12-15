@@ -12,3 +12,4 @@
 [Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:34
 [Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:35
 [Errno 2] No such file or directory: 'Assets\\TestFiles\\exampleText.txt' 12/07/2020 08:32:36
+[Errno 2] No such file or directory: 'Assets\\TestFiles\\Joseph_Luke_Mid_Term.txt' 12/09/2020 09:55:16

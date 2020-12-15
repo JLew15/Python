@@ -8,7 +8,7 @@ def openFile(fileName,mode):
     except IOError as e:
         print("Unable to open the file", fileName, "Ending program.\n", e)
         try:
-            file = open("Assets\\Errors\\errorLog.txt","a+")
+            file = open("Assets\\Errors\\errorLog.txt", "a+")
             time = datetime.now()
             errorTime = time.strftime("%m/%d/%Y %H:%M:%S")
             file.writelines(str(e)+" "+str(errorTime)+"\n")
@@ -23,7 +23,7 @@ def openFile(fileName,mode):
 def nextLine(file):
     try:
         line = file.readline()
-        line = line.replace("/","\n")
+        line = line.replace("/", "\n")
         return line
     except:
         print("Could not read line")
@@ -41,7 +41,7 @@ def nextQuestion(file):
         correct = correct[0]
     explanation = nextLine(file)
 
-    return category,question,answers,correct,explanation
+    return category, question, answers, correct, explanation
 
 def getName():
     try:
@@ -49,19 +49,19 @@ def getName():
         testTime = time.strftime("%m/%d %H:%M")
         while True:
             name = input("Please enter your name.")
-            if len(name) >+ 3 and " " in name:
+            if len(name) >= 3 and " " in name:
                 name = name.title()
                 return name, testTime
     except:
         print("GETNAMEFAILURE AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 
-def welcome(title,name,testTime):
+def welcome(title, name, testTime):
     """Welcome the player"""
     print("Welcome "+name+" to your Mid Term Test\n")
     print("Your tester is "+title)
 
 def createReportCard(name,score,totalQuestions):
-    card = open("Assets\\ReportCards\\"+name+".txt","w")
+    card = open("Assets\\ReportCards\\"+name+".txt", "w")
     card.write("Name = "+name+"\n")
     card.write("Number Correct = "+str(score)+"\n")
     percentage = score/totalQuestions*100
@@ -80,34 +80,34 @@ def createReportCard(name,score,totalQuestions):
 
 
 def main():
-    file = openFile("Joseph_Luke_Mid_Term.txt","r")#Will need to change file name to match the test you are taking.
+    file = openFile("Test.txt", "r")#Will need to change file name to match the test you are taking.
     title = nextLine(file)
     name, testTime = getName()
-    welcome(title,name,testTime)
+    welcome(title, name, testTime)
     score = 0
     totalQuestions = 0
-    category,question,answers,correct,explanation = nextQuestion(file)
+    category, question, answers, correct, explanation = nextQuestion(file)
     while category:
         totalQuestions += 1
         print(category)
         print(question)
         for i in range(len(answers)):
-            print(str.format("\t{}:    {}",i+1,answers[i]))
+            print(str.format("\t{}:    {}", i+1, answers[i]))
         #get answer
         answer = input("What is your answer?")
         if answer == correct:
-            print("\nRight!",end=" ")
+            print("\nRight!", end=" ")
             score+=1
         else:
-            print("\nWrong.",end=" ")
+            print("\nWrong.", end=" ")
         print(explanation)
-        print("Score:",score,"\n\n")
+        print("Score:", score, "\n\n")
         #get next block
-        category,question,answers,correct,explanation = nextQuestion(file)
+        category, question, answers, correct, explanation = nextQuestion(file)
     file.close()
     print("That was the last question!")
-    print("Your final score is",score)
-    createReportCard(name,score,totalQuestions)
+    print("Your final score is", score)
+    createReportCard(name, score, totalQuestions)
 
 
 
