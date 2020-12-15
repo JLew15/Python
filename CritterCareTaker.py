@@ -8,6 +8,7 @@ class Critter(object):
         self.weight = 0
         self.name = ""
         self.happy = 50
+        self.isAlive = True
 
     def intro(self):
         print("Hello, my name is", self.name)
@@ -56,19 +57,93 @@ class Critter(object):
     def setName(self, name):
         self.name = name
 
+    def getName(self):
+        return self.name
+
     def setHeight(self, height):
-        self.height = height
+        if 5 > height > 1:
+            self.height = height
+
+    def getHealth(self):
+        return self.health
+
+    def getHunger(self):
+        return self.hunger
+
+    def getHappy(self):
+        return self.happy
+
+    def die(self):
+        print(self.getName() + " has died...")
+        self.health = 0
+        self.isAlive = False
+
+    def hud(self):
+        print(self.getName())
+
+        health = self.getHealth()
+        if health > 80:
+            print("Health: Great")
+        elif health > 60:
+            print("Health: Good")
+        elif health > 50:
+            print("Health: Fair")
+        elif health == 0:
+            self.die()
+        else:
+            print("Health: Poor")
+
+        hunger = self.getHunger()
+        if hunger > 40:
+            print("Hunger: Starving")
+        elif hunger > 20:
+            print("Hunger: Really Hungry")
+        elif hunger < 10:
+            print("Hunger: Full")
+        else:
+            print("Hunger: Hungry")
+        if hunger == 100:
+            self.die()
+
+        happy = self.getHappy()
+        if happy >= 100:
+            print("Happy: Extremely Happy")
+        elif happy > 80:
+            print("Happy: Super Happy")
+        elif happy > 60:
+            print("Happy: Pretty Happy")
+        elif happy > 40:
+            print("Happy: Happy")
+        elif happy > 20:
+            print("Happy: Modest")
+        elif happy > 10:
+            print("Happy: Sad")
+        else:
+            print("Happy: Depressed")
 
 
 def main():
     critter1 = Critter()
-    critter1.name = "Silent Night"
-
-    critter2 = Critter()
-    critter2.name = "Silver Bells"
-
+    name = input("What will you name your pet?")
+    critter1.setName(name)
+    height = int(input("What is your pet's height?"))
+    critter1.setHeight(height)
     critter1.intro()
-    critter2.intro()
+    critter1.hud()
+    while critter1.isAlive:
+        critter1.passTime(1)
+        print("What do you want to do?")
+        print("Feed")
+        print("Play")
+        print("Nothing")
+        response = input()
+        if response == "feed" or response == "Feed":
+            food = input("What do you want to feed your pet?")
+            critter1.feed(food)
+        elif response == "play" or response == "Play":
+            time = int(input("How long will you play with your pet?"))
+            critter1.play(time)
+        critter1.hud()
 
 
 main()
