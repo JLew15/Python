@@ -44,10 +44,24 @@ def getName():
 
 
 class Player(object):
-    def __int__(self, name, score=0):
+    def __init__(self, name, score=0):
         self.name = name
         self.score = score
         self.lives = 3
 
+class Score(object):
+    def __init__(self):
+        self.value = 0
+        self.stepValue = 10
 
-if __name__ = "__main__":
+    def addTo(self, itemID):
+        for i in range(itemID):
+            self.value+=self.stepValue
+    def takeFrom(self, itemID):
+        self.value -= self.stepValue
+        if self.value < 0:
+            self.value = 0
+
+if __name__ == "__main__":
+    print("You ran this module directly (and did not 'import' it).")
+    input("\n\nPress the enter key to exit.")

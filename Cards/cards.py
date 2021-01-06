@@ -1,5 +1,6 @@
 import random
 
+
 # Card Games and Objects
 
 # Making Card object
@@ -13,35 +14,35 @@ class Card(object):
     def __init__(self, rank, suit):
         self.suit = suit
         self.rank = rank
-        self.value = 0
-
-    # Defining rank values. Can change values dependant on game if needed.
-        if self.rank == "K":
-            self.value = 13
-        elif self.rank == "Q":
-            self.value = 12
-        elif self.rank == "J":
-            self.value = 11
-        elif self.rank == "10":
-            self.value = 10
-        elif self.rank == "9":
-            self.value = 9
-        elif self.rank == "8":
-            self.value = 8
-        elif self.rank == "7":
-            self.value = 7
-        elif self.rank == "6":
-            self.value = 6
-        elif self.rank == "5":
-            self.value = 5
-        elif self.rank == "4":
-            self.value = 4
-        elif self.rank == "3":
-            self.value = 3
-        elif self.rank == "2":
-            self.value = 2
-        elif self.rank == "A":
-            self.value = 14
+        # self.value = 0
+        #
+        # # Defining rank values. Can change values dependant on game if needed.
+        # if self.rank == "K":
+        #     self.value = 13
+        # elif self.rank == "Q":
+        #     self.value = 12
+        # elif self.rank == "J":
+        #     self.value = 11
+        # elif self.rank == "10":
+        #     self.value = 10
+        # elif self.rank == "9":
+        #     self.value = 9
+        # elif self.rank == "8":
+        #     self.value = 8
+        # elif self.rank == "7":
+        #     self.value = 7
+        # elif self.rank == "6":
+        #     self.value = 6
+        # elif self.rank == "5":
+        #     self.value = 5
+        # elif self.rank == "4":
+        #     self.value = 4
+        # elif self.rank == "3":
+        #     self.value = 3
+        # elif self.rank == "2":
+        #     self.value = 2
+        # elif self.rank == "A":
+        #     self.value = 14
 
     # Making Ascii Art of Card for visuals.
     def __str__(self):
@@ -123,6 +124,32 @@ class Deck(Hand):
                     self.deal(hands)
 
 
+class PosCard(Card):
+    def __init__(self, rank, suit):
+        super(PosCard, self).__init__(rank, suit)
+        self.faceUp = True
+
+    def flip(self):
+        self.faceUp = not self.faceUp
+
+    def __str__(self):
+        if self.faceUp:
+            rep = super(PosCard, self).__str__()
+        else:
+            rep = """
+        +--------+
+        |########|
+        |########|
+        |########|
+        |########|
+        |########|
+        |########|
+        |########|
+        +--------+
+                """
+        return rep
+
+
 # Creating War Card Game
 def war():
     # Calling up a new Deck.
@@ -151,7 +178,8 @@ def war():
     print("If the COMBINED value of your cards is greater than your opponent, you win the war and take all the cards.")
     input()
     print("Whoever is holding all the cards, wins.")
-    print("The card values are A = 14, K = 13, Q = 12, J = 11, and the rest of the cards are face value. 10 = 10, 9 = 9, etc.")
+    print(
+        "The card values are A = 14, K = 13, Q = 12, J = 11, and the rest of the cards are face value. 10 = 10, 9 = 9, etc.")
     print("If the combined value of your cards in a war are the same, player two takes the cards in this version.")
     print("Otherwise, you would draw an additional 3 cards and the rules of a regular war still apply.")
     input("Press Enter to start playing.")
@@ -191,7 +219,8 @@ def war():
                 print(table)
                 input()
                 # Combines and checks values of cards. This is if player 1's value is higher.
-                if table.cards[2].value + table.cards[3].value + table.cards[4].value > table.cards[5].value + table.cards[6].value + table.cards[7].value:
+                if table.cards[2].value + table.cards[3].value + table.cards[4].value > table.cards[5].value + \
+                        table.cards[6].value + table.cards[7].value:
                     print("Player One Wins The War")
                     for card in table.cards:
                         table.giveTop(player1)
@@ -221,6 +250,6 @@ def war():
     else:
         print("Player 2 wins.")
 
-
-# Declaring war function in main program.
-war()
+if __name__ == "__main__":
+    print("You ran this module directly (and did not 'import' it).")
+    input("\n\nPress the enter key to exit.")
