@@ -34,7 +34,8 @@ class BlackJackHand(cards.Hand):
             print(card)
         rep = "###################################"
         rep += "\n " + self.name
-        rep += "\n " + self.total
+        if self.total:
+            rep += "\n " + self.total
         return rep
 
     @property
@@ -91,7 +92,7 @@ class BlackJackDealer(BlackJackHand):
 
 class Game(object):
     def __init__(self, names):
-        self.deck = BlackJackDeck
+        self.deck = BlackJackDeck()
         self.deck.populate()
         self.deck.shuffle()
         self.dealer = BlackJackDealer("Dealer")
@@ -108,11 +109,56 @@ class Game(object):
                 sp.append(player)
         return sp
 
+    def __additionalCards(self, player):
+        while not player.isBusted() and player.isHitting():
+            self.deck.deal([player], 1)
+            print(player)
+            if player.isBusted():
+                player.bust()
 
-deck = BlackJackDeck()
-deck.populate()
-deck.shuffle()
+    def play(self):
+        self.deck.deal(self.players + [self.dealer], 2)
+        self.dealer.flipFirstCard()
+        print(self.dealer)
 
-testCard = deck.cards[0]
-print(testCard)
-print(testCard.value)
+        for player in self.players:
+            self.__additionalCards(player)
+
+        self.dealer.flipFirstCard()
+        if not self.stillPlaying:
+            print(self.dealer)
+        else:
+            print(self.dealer)
+            self.__additionalCards(self.dealer)
+            if self.dealer.isBusted():
+                for player in self.stillPlaying:
+                    player.win()
+            else:
+                for player in self.stillPlaying:
+                    if player.total > self.dealer.total:
+                        player.win()
+                    elif player.total == self.dealer.total:
+                        player.push()
+                    else:
+                        player.lose()
+        for player in self.players:
+            player.clear()
+        self.dealer.clear()
+
+
+def main():
+    print("\t\tWelcome to Black Jack!\n")
+
+    names = []
+    numPlayers = gF.getNumber("How many players are playing?", 8, 1)
+    for i in range(numPlayers):
+        name = gF.getName()
+        names.append(name)
+    game = Game(names)
+    play = None
+    while play != "n":
+        game.play()
+        play = gF.yesNo("\nDo you want to play again?: ")
+
+
+main()
