@@ -9,30 +9,27 @@ root.geometry("720x700")
 root.attributes("-fullscreen", False)
 root.bind("z", quit)
 
-scrollBar1 = Scrollbar(root)
-scrollBar1.pack(side=RIGHT, fill=Y)
-
 
 app = Frame(root)
-app.pack()
+app.grid()
 
 myFont = tkFont.Font(family="Comic Sans MS", size=20)
 lbl = Label(app, text="This is a label.", bg="cornflowerblue", fg="black", font=myFont)
-lbl.pack()
+lbl.grid()
 
 button1 = Button(app, text="Don't click on me...", font=myFont, bg="cornflowerblue", fg="black")
-button1.pack()
+button1.grid()
 button2 = Button(app, text="Which one to click...", font=myFont, bg="cornflowerblue", fg="black")
-button2.pack()
+button2.grid()
 
 
-for i in range(300):
+for i in range(5):
     x = Button(app)
     x["text"] = "This is button number " + str(i+1)
     x["font"] = myFont
     x["bg"] = "cornflowerblue"
     x["fg"] = "lime"
-    x.pack()
+    x.grid()
 
 # kick off the window's event loop
 root.mainloop()
