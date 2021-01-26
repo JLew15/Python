@@ -2,18 +2,17 @@ from tkinter import *
 import os
 import time
 
-entrance = False
-messageRan = False
-
 
 class Clicker(Frame):
-    def __init__(self, master):
+    def __init__(self, master, root):
         super(Clicker, self).__init__(master)
         self.grid()
         self.total = 0
         self.colors = ["#000000", "#FFFFFF", "#F00000", "#0F0000", "#00F000", "#000F00", "#0000F0", "#00000F"]
         self.colorIndex = 0
         self.createWidgets()
+        self.master = master
+        self.root = root
 
     def createWidgets(self):
         self.label1 = Label(self, text="Total People:")
@@ -67,12 +66,14 @@ class App(Frame):
     passwords = ["HeheWow", "HeresJohnny"]
     entrance = False
 
-    def __init__(self, master):
+    def __init__(self, master, root):
         super(App, self).__init__(master)
         self.grid()
         self.createWidgets()
         self.tries = 0
         self.showingPass = False
+        self.master = master
+        self.root = root
 
     def createWidgets(self):
         self.lbl = Label(self, text="Enter your password.")
@@ -92,6 +93,9 @@ class App(Frame):
         self.txtArea.grid(row=4, columnspan=3)
         self.showPass = Button(self, text="Show Password", command=self.passShow)
         self.showPass.grid(row=2, column=2)
+        self.entranceButton = Button(self, text="Secret Button.", command=self.Load)
+        self.entranceButton.grid(row=3, column=2)
+        self.entranceButton.config(state="disabled")
 
     def submit(self):
         self.username = self.userEntry.get()
@@ -103,10 +107,7 @@ class App(Frame):
                 self.entrance = True
                 message = "You got in :)"
                 self.showMessage(message)
-                self.Load()
-
-
-
+                self.entranceButton.config(state="normal")
             else:
                 message = "Incorrect Password."
                 self.tries += 1
@@ -121,17 +122,13 @@ class App(Frame):
             self.bttn["command"] = self.lockout
 
     def Load(self):
-        time.sleep(2)
-        if messageRan:
-            self.destroy()
+        if self.entrance:
+            self.inactive()
+            self.root.geometry("200x170")
 
     def showMessage(self,message):
         self.txtArea.delete(0.0, END)
         self.txtArea.insert(0.0, message, END)
-        time.sleep(1)
-        global messageRan
-        messageRan = True
-        time.sleep(1)
 
     def passShow(self):
         if not self.showingPass:
@@ -145,6 +142,13 @@ class App(Frame):
         self.userEntry["bg"] = "#000000"
         self.passEntry["bg"] = "#000000"
         self.bttn["bg"] = "#000000"
+        self.bttn.config(state="disabled")
+
+    def active(self):
+        self.grid()
+
+    def inactive(self):
+        self.grid_forget()
 
 
 def main():
@@ -155,8 +159,8 @@ def main():
     root.resizable(0, 0)
     container = Frame(root)
     container.grid()
-    app = App(container)
-    app1 = Clicker(container)
+    app = App(container, root)
+    app1 = Clicker(container, root)
     app.grid(row=0, column=0)
 
     root.mainloop()
