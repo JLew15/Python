@@ -1,4 +1,5 @@
 from tkinter import *
+from datetime import datetime
 
 
 class App(Frame):
@@ -6,6 +7,9 @@ class App(Frame):
         super(App, self).__init__(master)
         self.grid()
         self.createWidgets(master)
+        self.timeNow = datetime.now()
+        self.fmTimeNow = self.timeNow.strftime("%m/%d/%Y %H:%M:%S")
+
 
     def createWidgets(self, master):
         Label(self, text="Customer Name: ").grid(row=0, column=0, sticky=W)
@@ -108,6 +112,7 @@ class App(Frame):
                     ).grid(row=r, column=c, sticky=W)
 
     def order(self):
+        self.orders = open("orders.txt", "a")
         message = "Hello, " + self.nameEntry.get() + "! " + "Your order is a " + self.pizzaSize.get() + " " +\
                                                                                 self.pizzaCrust.get()\
                                                                                 + " Crust pizza with the" \
@@ -186,7 +191,10 @@ class App(Frame):
             message = "Please enter a name first."
         self.output.delete(0.0, END)
         self.output.insert(0.0, message + "\n\nyour total is: " + str(self.price))
+        self.orders.write("\n\n"+ "ORDER AT " + str(self.fmTimeNow) + "\n" + message + "\n\nyour total is: " + str(self.price) + "\n__________________________")
+        self.orders.close()
         self.price = 0.0
+
 
 
 def main():
