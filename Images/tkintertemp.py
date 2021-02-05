@@ -7,9 +7,9 @@ WIDTH = 500
 class App(Frame):
     def __init__(self, master):
         super(App, self).__init__(master)
-        pass
+        self.createWidgets()
 
-    def createWidgets(self, master):
+    def createWidgets(self):
         pass
 
 
