@@ -3,11 +3,7 @@ from tkinter import *
 HEIGHT = 500
 WIDTH = 500
 
-value2Activated = False
-divideActivated = False
-multiplyActivated = False
-subtractActivated = False
-plusActivated = False
+
 
 
 class App(Frame):
@@ -17,8 +13,15 @@ class App(Frame):
         self.createWidgets()
 
     def createWidgets(self):
-        self.value1 = ""
-        self.value2 = ""
+        self.value1 = "0"
+        self.value2 = "0"
+        self.finalValue = "0"
+        self.message = ""
+        self.value2Activated = False
+        self.divideActivated = False
+        self.multiplyActivated = False
+        self.subtractActivated = False
+        self.plusActivated = False
         self.layoutGrid = Frame(self)
         self.layoutGrid.grid()
         self.instructionLabel = Label(self.layoutGrid, text="Please enter a number and push one of the operators.")
@@ -55,89 +58,173 @@ class App(Frame):
         self.divideButton.grid(row=2, column=3)
         self.multiplyButton = Button(self.layoutGrid, text="*", width=5, height=2, command=self.multiplyButtonPress)
         self.multiplyButton.grid(row=6, column=3)
-        self.clearButton = Button(self.layoutGrid, text="C", width=5, height=2)#, command=self.clearButtonPress)
+        self.clearButton = Button(self.layoutGrid, text="C", width=5, height=2, command=self.clearButtonPress)
         self.clearButton.grid(row=6, column=0)
 
     def oneButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.value1 = self.value1 + "1"
         else:
             self.value2 = self.value2 + "1"
+        self.message = self.message + "1"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def twoButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.value1 = self.value1 + "2"
         else:
             self.value2 = self.value2 + "2"
+        self.message = self.message + "2"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def threeButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.value1 = self.value1 + "3"
         else:
             self.value2 = self.value2 + "3"
+        self.message = self.message + "3"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def fourButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.value1 = self.value1 + "4"
         else:
             self.value2 = self.value2 + "4"
+        self.message = self.message + "4"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def fiveButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.value1 = self.value1 + "5"
         else:
             self.value2 = self.value2 + "5"
+        self.message = self.message + "5"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def sixButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.value1 = self.value1 + "6"
         else:
             self.value2 = self.value2 + "6"
+        self.message = self.message + "6"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def sevenButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.value1 = self.value1 + "7"
         else:
             self.value2 = self.value2 + "7"
+        self.message = self.message + "7"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def eightButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.value1 = self.value1 + "8"
         else:
             self.value2 = self.value2 + "8"
+        self.message = self.message + "8"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def nineButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.value1 = self.value1 + "9"
         else:
             self.value2 = self.value2 + "9"
+        self.message = self.message + "9"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def zeroButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.value1 = self.value1 + "0"
         else:
             self.value2 = self.value2 + "0"
+        self.message = self.message + "0"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def plusButtonPress(self):
-        value2Activated = True
-        plusActivated = True
+        self.value2Activated = True
+        self.plusActivated = True
+        self.message = self.message + "+"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def subtractButtonPress(self):
-        value2Activated = True
-        subtractActivated = True
+        self.value2Activated = True
+        self.subtractActivated = True
+        self.message = self.message + "-"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def multiplyButtonPress(self):
-        value2Activated = True
-        multiplyActivated = True
+        self.value2Activated = True
+        self.multiplyActivated = True
+        self.message = self.message + "*"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def divideButtonPress(self):
-        value2Activated = True
-        divideActivated = True
+        self.value2Activated = True
+        self.divideActivated = True
+        self.message = self.message + "/"
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, self.message)
 
     def equalsButtonPress(self):
-        if not value2Activated:
+        if not self.value2Activated:
             self.outputBox.delete(0.0, END)
             self.outputBox.insert(0.0, self.value1)
+        elif self.value2Activated and self.multiplyActivated:
+            self.finalValue = (int(self.value1)*int(self.value2))
+            self.finalValue = str(self.finalValue)
+            self.outputBox.delete(0.0, END)
+            self.outputBox.insert(0.0, self.finalValue)
+        elif self.value2Activated and self.divideActivated:
+            self.finalValue = (int(self.value1)/int(self.value2))
+            self.finalValue = str(self.finalValue)
+            self.outputBox.delete(0.0, END)
+            self.outputBox.insert(0.0, self.finalValue)
+        elif self.value2Activated and self.plusActivated:
+            self.finalValue = (int(self.value1)+int(self.value2))
+            self.finalValue = str(self.finalValue)
+            self.outputBox.delete(0.0, END)
+            self.outputBox.insert(0.0, self.finalValue)
+        elif self.value2Activated and self.subtractActivated:
+            self.finalValue = str((int(self.value1)-int(self.value2)))
+            self.finalValue = str(self.finalValue)
+            self.outputBox.delete(0.0, END)
+            self.outputBox.insert(0.0, self.finalValue)
+        self.value1 = "0"
+        self.value2 = "0"
+        self.finalValue = "0"
+        self.message = ""
+        self.value2Activated = False
+        self.subtractActivated = False
+        self.plusActivated = False
+        self.divideActivated = False
+        self.multiplyActivated = False
+    def clearButtonPress(self):
+        self.value1 = "0"
+        self.value2 = "0"
+        self.finalValue = "0"
+        self.message = ""
+        self.value2Activated = False
+        self.subtractActivated = False
+        self.plusActivated = False
+        self.divideActivated = False
+        self.multiplyActivated = False
+        self.outputBox.delete(0.0, END)
+        self.outputBox.insert(0.0, "NUMBERS CLEARED")
+
 
 def main():
     root = Tk()
