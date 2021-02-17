@@ -1,4 +1,6 @@
+import os
 from tkinter import *
+from tkinter import filedialog as fd
 
 HEIGHT = 500
 WIDTH = 500
@@ -22,6 +24,11 @@ class App(Frame):
         self.multiplyActivated = False
         self.subtractActivated = False
         self.plusActivated = False
+        menuBar = Menu(self.master)
+        self.master.config(menu=menuBar)
+        fileMenu = Menu(menuBar)
+        fileMenu.add_command(label="Open", command=self.onOpen)
+        menuBar.add_cascade(label="File", menu=fileMenu)
         self.layoutGrid = Frame(self)
         self.layoutGrid.grid()
         self.instructionLabel = Label(self.layoutGrid, text="Please enter a number and push one of the operators.")
@@ -224,6 +231,14 @@ class App(Frame):
         self.multiplyActivated = False
         self.outputBox.delete(0.0, END)
         self.outputBox.insert(0.0, "NUMBERS CLEARED")
+
+    def onOpen(self):
+        ftypes = [("Python file", "*.pyw")]
+        dialog = fd.Open(self, filetypes=ftypes)
+        f1 = dialog.show()
+        if ".py" in f1:
+            self.master.destroy()
+            os.system("python "+f1)
 
 
 def main():
