@@ -40,7 +40,7 @@ class Board(Canvas):
         self.after(Constants.DELAY, self.onTimer)
 
     def onKeyPressed(self, e):
-        key = e.keys
+        key = e.keysym
         LEFTCURSORKEY = "Left"
         if key == LEFTCURSORKEY and self.moveX <= 0:
             self.moveX = -Constants.DOTSIZE
@@ -70,19 +70,65 @@ class Board(Canvas):
             self.gameOver()
 
     def moveSnake(self):
-        pass
+        bodyParts = self.find_withtag("body")
+        head = self.find_withtag("head")
+        snakeParts = bodyParts+head
+
+        z = 0
+        while z < len(snakeParts)-1:
+            c1 = self.coords(snakeParts[z])
+            c2 = self.coords(snakeParts[z+1])
+            self.move(snakeParts[z], c2[0]-c1[0], c2[1]-c1[1])
+            z+=1
+        self.move(head, self.moveX, self.moveY)
 
     def gameOver(self):
-        pass
+        self.delete(ALL)
+        self.create_text(self.winfo_width() / 2, self.winfo_height() / 2, text="Game Over with score {0}".format(self.score), fill="white")
 
     def checkCollision(self):
-        pass
+        bodyParts = self.find_withtag("body")
+        head = self.find_withtag("head")
+        snakeParts = bodyParts + head
+
+        x1, y1, x2, y2 = self.bbox(head)
+        overlap = self.find_overlapping(x1, y1, x2, y2)
+
+        for part in bodyParts:
+            for hit in overlap:
+                if hit == part:
+                    self.inGame = False
+
+        if x1 < 0:
+            self.inGame = False
+        if x1 > Constants.BOARD_WIDTH - Constants.DOTSIZE:
+            self.inGame = False
+
+        if y1 < 0:
+            self.inGame = False
+        if y1 > Constants.BOARD_HEIGHT - Constants.DOTSIZE:
+            self.inGame = False
+
+        if not self.inGame:
+            self.gameOver()
 
     def checkAppleCollision(self):
-        pass
+        apple = self.find_withtag("apple")
+        head = self.find_withtag("head")
+        body = self.find_withtag("body")
+        x1, x2, y1, y2 = self.bbox(head)
+        overlap = self.find_overlapping(x1, x2, y1, y2)
+
+        for hit in overlap:
+            if apple[0] == hit:
+                self.score += 1
+                x, y = self.coords(apple)
+                self.create_image(self.coords(body[len(body)-1]), image= self.body, anchor= NW, tag= "body")
+                self.locateApple()
 
     def drawScore(self):
-        pass
+        score = self.find_withtag("score")
+        self.itemconfigure(score, text="Score: {0}".format(self.score))
 
     def loadImages(self):
         """Load images."""
@@ -106,13 +152,24 @@ class Board(Canvas):
         self.create_image(40, 50, image=self.body, anchor=NW, tag="body")
 
     def locateApple(self):
+        bodyParts = self.find_withtag("body")
+        head = self.find_withtag("head")
+        snakeParts = bodyParts + head
+        r = random.randint(0, Constants.MAXRANNUM)
+        for i in snakeParts:
+            checker = self.coords(i)
+            print(checker)
+            appleCoords = self.appleX, self.appleY
+            print(appleCoords)
+            if checker != appleCoords:
+                r = random.randint(0, Constants.MAXRANNUM)
+                self.appleX = r * Constants.DOTSIZE
+                r = random.randint(0, Constants.MAXRANNUM)
+                self.appleY = r * Constants.DOTSIZE
+            else:
+                self.locateApple()
         apple = self.find_withtag("apple")
         self.delete(apple[0])
-        r = random.randint(0, Constants.MAXRANNUM)
-        self.appleX = r * Constants.DOTSIZE
-        r = random.randint(0, Constants.MAXRANNUM)
-        self.appleY = r * Constants.DOTSIZE
-
         self.create_image(self.appleX, self.appleY, anchor=NW, image=self.apple, tag="apple")
 
 

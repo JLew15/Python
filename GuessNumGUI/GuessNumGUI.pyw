@@ -46,6 +46,10 @@ class App(Frame):
         fileMenu = Menu(menuBar)
         fileMenu.add_command(label="Open", command=self.onOpen)
         menuBar.add_cascade(label="File", menu=fileMenu)
+        self.resetFrame = Frame()
+        self.resetFrame.grid()
+        self.resetButton = Button(self.resetFrame, text="Restart", command=self.resetButtonPress, width=15)
+        self.resetButton.grid()
 
     def onebuttonPress(self):
         if 1 != self.theNumber:
@@ -226,6 +230,10 @@ class App(Frame):
                     self.numTrys = 3
                     self.outputBox.delete(0.0, END)
                     self.outputBox.insert(0.0, "You Got It")
+
+    def resetButtonPress(self):
+        self.master.destroy()
+        main()
 
     def onOpen(self):
         ftypes = [("Python file", "*.pyw")]
