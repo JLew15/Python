@@ -1,0 +1,40 @@
+        if self.rect.left > WIDTH:
+            self.rect.top = HEIGHT
+            self.rect.x = WIDTH/2
+            self.speedX = 0
+            self.speedY = -5
+        if self.rect.right < 0:
+            self.rect.bottom = 0
+            self.rect.x = WIDTH/2
+            self.speedX = 0
+            self.speedY = 5
+        if self.rect.top > HEIGHT:
+            self.rect.left = 0
+            self.rect.y = HEIGHT/2
+            self.speedX = 5
+            self.speedY = 0
+        if self.rect.bottom < 0:
+            self.rect.left = WIDTH
+            self.rect.y = HEIGHT/2
+            self.speedX = -5
+            self.speedY = 0
+        self.rect.x += self.speedX
+        self.rect.y += self.speedY
+
+
+
+                if self.rect.centerx > WIDTH/2:
+            self.doCircle = True
+            if self.doCircle and self.angle < 360:
+                rad = self.angle * math.pi / 180
+                self.rect.centery = -math.sin(rad) * 25 + self.rect.centery
+                self.rect.centerx = math.cos(rad) * 25 + self.rect.centerx
+                self.angle += 75
+            else:
+                self.doCircle = False
+            self.speedX = 5
+            self.speedY = -5
+        if self.rect.bottomleft[0]>WIDTH and self.rect.bottomleft[1]<=0:
+            self.rect.bottomright = (0, 0)
+            self.speedY = 5
+            self.angle = 0

@@ -1,37 +1,46 @@
+import math
 import random
 import pygame
 
-class Player(pygame.sprite.Sprite):
+class NPC(pygame.sprite.Sprite):
     def __init__(self):
-        super(Player, self).__init__()
+        super(NPC, self).__init__()
         self.image = pygame.Surface((25, 25))
         self.image.fill(RED)
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH/2, HEIGHT/2)
         self.speedX = 5
+        self.speedY = 6
+        self.angle = 0
+        self.doCircle = False
+
+    def update(self):
+        if self.rect.right >= WIDTH-1 or self.rect.left <= 1:
+            self.speedX = -self.speedX
+            if self.speedX < 0:
+                self.speedX -= 1
+            else:
+                self.speedX += 1
+        if self.rect.bottom >= HEIGHT-1 or self.rect.top <=1:
+            self.speedY = -self.speedY
+            if self.speedY < 0:
+                self.speedY -= 1
+            else:
+                self.speedY += 1
+        self.rect.x += self.speedX
+        self.rect.y += self.speedY
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        super(Player, self).__init__()
+        self.image = pygame.Surface((50, 50))
+        self.image.fill(SKYBLUE)
+        self.rect = self.image.get_rect()
+        self.rect.center = (WIDTH/2, HEIGHT/2)
+        self.speedX = 0
         self.speedY = 0
 
     def update(self):
-        if self.rect.left > WIDTH:
-            self.rect.top = HEIGHT
-            self.rect.x = WIDTH/2
-            self.speedX = 0
-            self.speedY = -5
-        if self.rect.right < 0:
-            self.rect.bottom = 0
-            self.rect.x = WIDTH/2
-            self.speedX = 0
-            self.speedY = 5
-        if self.rect.top > HEIGHT:
-            self.rect.left = 0
-            self.rect.y = HEIGHT/2
-            self.speedX = 5
-            self.speedY = 0
-        if self.rect.bottom < 0:
-            self.rect.left = WIDTH
-            self.rect.y = HEIGHT/2
-            self.speedX = -5
-            self.speedY = 0
         self.rect.x += self.speedX
         self.rect.y += self.speedY
 
@@ -65,12 +74,44 @@ playersGroup = pygame.sprite.Group()
 mobGroup = pygame.sprite.Group()
 
 player = Player()
+npc = NPC()
 
 allSprites.add(player)
+allSprites.add(npc)
+playersGroup.add(player)
+mobGroup.add(npc)
 
 while running:
     clock.tick(FPS)
     for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                player.speedX = -5
+            if event.key == pygame.K_RIGHT:
+                player.speedX = 5
+            if event.key == pygame.K_UP:
+                player.speedY = -5
+            if event.key == pygame.K_DOWN:
+                player.speedY = 5
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT:
+                player.speedX = -0
+            if event.key == pygame.K_RIGHT:
+                player.speedX = 0
+            if event.key == pygame.K_UP:
+                player.speedY = -0
+            if event.key == pygame.K_DOWN:
+                player.speedY = 0
+
+        # if event.type == pygame.KEYDOWN:
+        #     if event.key == pygame.K_LEFT:
+        #         player.rect.x -= 50
+        #     if event.key == pygame.K_RIGHT:
+        #         player.rect.x += 50
+        #     if event.key == pygame.K_UP:
+        #         player.rect.y -= 50
+        #     if event.key == pygame.K_DOWN:
+        #         player.rect.y += 50
         if event.type == pygame.QUIT:
             running = False
 
