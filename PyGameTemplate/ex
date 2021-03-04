@@ -38,3 +38,97 @@
             self.rect.bottomright = (0, 0)
             self.speedY = 5
             self.angle = 0
+
+        #     if event.type == pygame.KEYDOWN:
+        #         if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_KP4:
+        #             player.speedX = -5
+        #         if event.key == pygame.K_RIGHT or event.key == pygame.K_d or event.key == pygame.K_KP6:
+        #             player.speedX = 5
+        #         if event.key == pygame.K_UP or event.key == pygame.K_w or event.key == pygame.K_KP8:
+        #             player.speedY = -5
+        #         if event.key == pygame.K_DOWN or event.key == pygame.K_s or event.key == pygame.K_KP2:
+        #             player.speedY = 5
+        #         if event.key == pygame.K_KP1:
+        #             player.speedX = -5
+        #             player.speedY = 5
+        #         if event.key == pygame.K_KP3:
+        #             player.speedX = 5
+        #             player.speedY = 5
+        #         if event.key == pygame.K_KP7:
+        #             player.speedX = -5
+        #             player.speedY = -5
+        #         if event.key == pygame.K_KP9:
+        #             player.speedX = 5
+        #             player.speedY = -5
+        #         if event.key == pygame.K_ESCAPE:
+        #             running = False
+        #     if event.type == pygame.KEYUP:
+        #         if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_KP4:
+        #             player.speedX = -0
+        #         if event.key == pygame.K_RIGHT or event.key == pygame.K_d or event.key == pygame.K_KP6:
+        #             player.speedX = 0
+        #         if event.key == pygame.K_UP or event.key == pygame.K_w or event.key == pygame.K_KP8:
+        #             player.speedY = -0
+        #         if event.key == pygame.K_DOWN or event.key == pygame.K_s or event.key == pygame.K_KP2:
+        #             player.speedY = 0
+        #         if event.key == pygame.K_KP1:
+        #             player.speedX = 0
+        #             player.speedY = 0
+        #         if event.key == pygame.K_KP3:
+        #             player.speedX = 0
+        #             player.speedY = 0
+        #         if event.key == pygame.K_KP7:
+        #             player.speedX = 0
+        #             player.speedY = 0
+        #         if event.key == pygame.K_KP9:
+        #             player.speedX = 0
+        #             player.speedY = 0
+
+        # if event.type == pygame.KEYDOWN:
+        #     if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_KP4:
+        #         player.rect.x -= 50
+        #     if event.key == pygame.K_RIGHT or event.key == pygame.K_d or event.key == pygame.K_KP6:
+        #         player.rect.x += 50
+        #     if event.key == pygame.K_UP or event.key == pygame.K_w or event.key == pygame.K_KP8:
+        #         player.rect.y -= 50
+        #     if event.key == pygame.K_DOWN or event.key == pygame.K_s or event.key == pygame.K_KP2:
+        #         player.rect.y += 50
+        #     if event.key == pygame.K_KP1:
+        #         player.rect.x -= 50
+        #         player.rect.y += 50
+        #     if event.key == pygame.K_KP3:
+        #         player.rect.x += 50
+        #         player.rect.y += 50
+        #     if event.key == pygame.K_KP7:
+        #         player.rect.x -= 50
+        #         player.rect.y -= 50
+        #     if event.key == pygame.K_KP9:
+        #         player.rect.x += 50
+        #         player.rect.y -= 50
+
+
+        # mousepress = pygame.mouse.get_pressed(3)
+        # if mousepress[0] and self.rect.collidepoint(pygame.mouse.get_pos()):
+        #     self.rect.center = (mouseX, mouseY)
+        #     spawnNewNPC(mouseX, mouseY)
+        # self.speedX = 0
+        # self.speedY = 0
+        # keystate = pygame.key.get_pressed()
+        # if keystate[pygame.K_LEFT] or keystate[pygame.K_a] or keystate[pygame.K_KP4]:
+        #     self.speedX = -5
+        # if keystate[pygame.K_RIGHT] or keystate[pygame.K_d] or keystate[pygame.K_KP6]:
+        #     self.speedX = 5
+        # if keystate[pygame.K_UP] or keystate[pygame.K_w] or keystate[pygame.K_KP8]:
+        #     self.speedY = -5
+        # if keystate[pygame.K_DOWN] or keystate[pygame.K_s] or keystate[pygame.K_KP2]:
+        #     self.speedY = 5
+        # self.rect.x += self.speedX
+        # self.rect.y += self.speedY
+        # if self.rect.left < 0:
+        #     self.rect.left = 0
+        # if self.rect.top < 0:
+        #     self.rect.top = 0
+        # if self.rect.bottom > HEIGHT:
+        #     self.rect.bottom = HEIGHT
+        # if self.rect.right > WIDTH:
+        #     self.rect.right = WIDTH
