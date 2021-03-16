@@ -3,6 +3,8 @@ import random as r
 import math
 from os import *
 
+
+
 # Code written by Jaiden Lewis
 # Artwork Credit Kenney.nl or www.kenney.nl
 
@@ -15,8 +17,9 @@ class Projectile(pg.sprite.Sprite):
         self.image = pg.transform.scale(bulletImg, (5, 10))
         self.rect = self.image.get_rect()
         self.rect.centerx = x
-        self.rect.bottom = y-1
+        self.rect.bottom = y - 1
         self.speedY = -5
+
     def update(self):
         self.rect.y += self.speedY
         if self.rect.bottom < 0:
@@ -31,8 +34,8 @@ class Player(pg.sprite.Sprite):
         self.image = playerImg
         self.image = pg.transform.scale(playerImg, (50, 40))
         self.rect = self.image.get_rect()
-        self.rect.centerx = (WIDTH/2)
-        self.rect.bottom = (HEIGHT - (HEIGHT*.05))
+        self.rect.centerx = (WIDTH / 2)
+        self.rect.bottom = (HEIGHT - (HEIGHT * .05))
         self.speedX = 0
 
     def update(self):
@@ -47,25 +50,43 @@ class Player(pg.sprite.Sprite):
         if keystate[pg.K_RIGHT] or keystate[pg.K_d]:
             self.speedX = 3
         self.rect.x += self.speedX
+
     def shoot(self):
         bullet = Projectile(self.rect.centerx, self.rect.top)
         projectileGroup.add(bullet)
         allSprites.add(bullet)
+
 
 class Mob(pg.sprite.Sprite):
     def __init__(self):
         super(Mob, self).__init__()
         # self.image = pg.Surface((25, 25))
         # self.image.fill(RED)
-        self.image = mobImg
-        self.image = pg.transform.scale(mobImg, (25, 25))
+        self.imageO = mobImg
+        self.imageO = pg.transform.scale(mobImg, (25, 25))
+        self.image = self.imageO.copy()
         self.rect = self.image.get_rect()
-        self.rect.centerx = r.randint(13, WIDTH-13)
+        self.rect.centerx = r.randint(13, WIDTH - 13)
         self.rect.top = 0
         self.speedY = r.randint(1, 10)
         self.speedX = r.randint(-3, 3)
+        self.last_update = pg.time.get_ticks()
+        self.rot = 0
+        self.rotSpeed = r.randint(-8, 8)
+
+    def rotate(self):
+        now = pg.time.get_ticks()
+        if now - self.last_update > 60:
+            self.last_update = now
+            self.rot = (self.rot + self.rotSpeed) % 360
+            newImage = pg.transform.rotate(self.imageO, self.rot)
+            oldCenter = self.rect.center
+            self.image = newImage
+            self.rect = self.image.get_rect()
+            self.rect.center = oldCenter
 
     def update(self):
+        self.rotate()
         if self.rect.top > HEIGHT:
             self.rect.top = 0
             self.rect.centerx = r.randint(13, WIDTH - 13)
@@ -73,6 +94,7 @@ class Mob(pg.sprite.Sprite):
             self.speedX = r.randint(-3, 3)
         self.rect.x += self.speedX
         self.rect.y += self.speedY
+
     def spawnNPC(self):
         npc = Mob()
         mobGroup.add(npc)
@@ -85,6 +107,9 @@ HEIGHT = 600
 WIDTH = 300
 FPS = 60
 TITLE = "Shoot Em Up"
+playerLives = 5
+playerScore = 0
+fontName = pg.font.match_font("arial")
 
 # COLORS
 BLACK = (0, 0, 0)
@@ -155,12 +180,19 @@ for i in range(10):
 player1.add(playerGroup)
 mob1.add(mobGroup)
 
-
 for sprite in playerGroup:
     sprite.add(allSprites)
 for sprite in mobGroup:
     sprite.add(allSprites)
 #################################
+
+def drawText(surf, text, size, x, y):
+    font = pg.font.Font(fontName, size)
+    txtSurface = font.render(text, True, WHITE)
+    textRect = txtSurface.get_rect()
+    textRect.midtop = (x, y)
+    surf.blit(txtSurface, textRect)
+
 
 # Game loop
 #################################
@@ -189,6 +221,22 @@ while running:
     #######
     allSprites.update()
 
+    hits = pg.sprite.spritecollide(player1, mobGroup, True)
+    if hits:
+        print("Player hit")
+        mob1.spawnNPC()
+        playerLives -= 1
+        playerScore -= 10
+        if playerLives <= 0:
+            player1.kill()
+    hits = pg.sprite.groupcollide(projectileGroup, mobGroup, True, True)
+    for hit in hits:
+        mob1.spawnNPC()
+        playerScore += 5
+        if playerScore % 100 == 0:
+            playerLives += 1
+            print("LIFE GAINED")
+
     #######
 
     # Render
@@ -196,6 +244,7 @@ while running:
     screen.fill(BLACK)
     screen.blit(bg, bgRect)
     allSprites.draw(screen)
+    drawText(screen,"Score: " + str(playerScore), 18, WIDTH/2, 10)
 
     pg.display.flip()
     #######
