@@ -37,6 +37,8 @@ class Player(pg.sprite.Sprite):
         self.rect.centerx = (WIDTH / 2)
         self.rect.bottom = (HEIGHT - (HEIGHT * .05))
         self.speedX = 0
+        self.shootDelay = 250
+        self.lastShot = pg.time.get_ticks()
 
     def update(self):
         self.speedX = 0
@@ -49,12 +51,18 @@ class Player(pg.sprite.Sprite):
             self.speedX = -3
         if keystate[pg.K_RIGHT] or keystate[pg.K_d]:
             self.speedX = 3
+        if keystate[pg.K_SPACE]:
+            self.shoot()
         self.rect.x += self.speedX
 
     def shoot(self):
-        bullet = Projectile(self.rect.centerx, self.rect.top)
-        projectileGroup.add(bullet)
-        allSprites.add(bullet)
+        now = pg.time.get_ticks()
+        if now - self.lastShot > self.shootDelay:
+            self.lastShot = now
+            shootAudio.play()
+            bullet = Projectile(self.rect.centerx, self.rect.top)
+            projectileGroup.add(bullet)
+            allSprites.add(bullet)
 
 
 class Mob(pg.sprite.Sprite):
@@ -129,7 +137,7 @@ PASTELGREEN = (123, 255, 123)
 gameFolder = path.dirname(__file__)
 imgs = path.join(gameFolder, "img")
 saveData = path.join(gameFolder, "data")
-aud = path.join(gameFolder, "media")
+aud = path.join(gameFolder, "aud")
 playerimgs = path.join(imgs, "player")
 mobimgs = path.join(imgs, "mob")
 bgimg = path.join(imgs, "bg")
@@ -186,12 +194,21 @@ for sprite in mobGroup:
     sprite.add(allSprites)
 #################################
 
+shootAudio = pg.mixer.Sound(aud + "/sfx_wpn_laser2.wav")
+
 def drawText(surf, text, size, x, y):
     font = pg.font.Font(fontName, size)
     txtSurface = font.render(text, True, WHITE)
     textRect = txtSurface.get_rect()
     textRect.midtop = (x, y)
     surf.blit(txtSurface, textRect)
+
+def drawHB(surf, x, y, pct):
+    if pct < 0:
+        pct = 0
+    barLength = 100
+    barHeight = 10
+    fill = (pct/100) * barLength
 
 
 # Game loop
@@ -211,8 +228,6 @@ while running:
         if event.type == pg.KEYDOWN:
             if event.key == pg.K_ESCAPE:
                 running = False
-            if event.key == pg.K_SPACE:
-                player1.shoot()
         if event.type == pg.QUIT:
             running = False
     #######
