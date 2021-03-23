@@ -8,6 +8,30 @@ from os import *
 # Code written by Jaiden Lewis
 # Artwork Credit Kenney.nl or www.kenney.nl
 
+class Explosion(pg.sprite.Sprite):
+    def __init__(self, center):
+        super(Explosion, self).__init__()
+        self.image = explosionAnimation["lg"][0]
+        self.rect = self.image.get_rect()
+        self.rect.center = center
+        self.frame = 0
+        self.lastUpdate = pg.time.get_ticks()
+        self.frameRate = 50
+
+    def update(self):
+        now = pg.time.get_ticks()
+        if now - self.lastUpdate > self.frameRate:
+            self.lastUpdate = now
+            self.frame += 1
+            if self.frame == len(explosionAnimation["lg"]):
+                self.kill()
+            else:
+                center = self.rect.center
+                self.image = explosionAnimation["lg"][self.frame]
+                self.rect = self.image.get_rect()
+                self.rect.center = center
+
+
 class Projectile(pg.sprite.Sprite):
     def __init__(self, x, y):
         super(Projectile, self).__init__()
@@ -141,6 +165,7 @@ aud = path.join(gameFolder, "aud")
 playerimgs = path.join(imgs, "player")
 mobimgs = path.join(imgs, "mob")
 bgimg = path.join(imgs, "bg")
+anim = path.join(imgs, "ani")
 print(imgs)
 #################################
 
@@ -165,6 +190,13 @@ bulletImg = pg.image.load(playerimgs + "/shot.png")
 bulletRect = bulletImg.get_rect()
 mobImg = pg.image.load(mobimgs + "/shooting.png")
 mobRect = mobImg.get_rect()
+explosionAnimation = {"lg": []}
+for i in range(0, 8):
+    fn = "regularExplosion0{}.png".format(i)
+    img = pg.image.load(path.join(anim, fn)).convert()
+    img.set_colorkey(BLACK)
+    img = pg.transform.scale(img, (40, 40))
+    explosionAnimation["lg"].append(img)
 #################################
 
 # Sprite Groups
@@ -237,16 +269,20 @@ while running:
     allSprites.update()
 
     hits = pg.sprite.spritecollide(player1, mobGroup, True)
-    if hits:
+    for hit in hits:
         print("Player hit")
         mob1.spawnNPC()
         playerLives -= 1
         playerScore -= 10
+        exp = Explosion(hit.rect.center)
+        allSprites.add(exp)
         if playerLives <= 0:
             player1.kill()
     hits = pg.sprite.groupcollide(projectileGroup, mobGroup, True, True)
     for hit in hits:
         mob1.spawnNPC()
+        exp = Explosion(hit.rect.center)
+        allSprites.add(exp)
         playerScore += 5
         if playerScore % 100 == 0:
             playerLives += 1
